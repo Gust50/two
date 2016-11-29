@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol segementViewDelegate<NSObject>
-- (void)click:(NSInteger)selectedSegmentIndex;
+- (void)click:(UISegmentedControl *)currentIndex;
 @end
 
 @interface segementView : UIView

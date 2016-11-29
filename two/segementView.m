@@ -19,6 +19,7 @@
         _segmentV = [[UISegmentedControl alloc] initWithItems:self.segmentArray];
         _segmentV.selectedSegmentIndex = 0;
         _segmentV.tintColor = [UIColor colorWithRed:40/256.0 green:145/256.0 blue:125/256.0 alpha:1.0];
+        [_segmentV addTarget:self action:@selector(click:) forControlEvents:UIControlEventValueChanged];
 //        _segmentV.backgroundColor = [UIColor whiteColor];
 //        _segmentV.momentary = YES;
 //        // 有基本四种样式
@@ -62,9 +63,10 @@
 }
 
 #pragma mark --- 代理 ---
-- (void)click:(NSInteger)selectedSegmentIndex{
+- (void)click:(UISegmentedControl *)currentIndex{
+
     if (self.delegate && [self.delegate respondsToSelector:@selector(click:)]) {
-        [self.delegate click:_segmentV.selectedSegmentIndex];
+        [self.delegate click:currentIndex];
     }
 }
 @end
