@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchBaseController : UIViewController
-
+- (void)leftImage:(NSString *)image push:(UIViewController *)controller;///导航栏左边的按钮
+- (void)leftITitle:(NSString *)title push:(UIViewController *)controller;///导航栏左边的文字
 @end

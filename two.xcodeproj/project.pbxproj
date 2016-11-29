@@ -25,6 +25,11 @@
 		CDDA4E921DED1B2700506B0A /* SearchBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4E901DED1B2700506B0A /* SearchBaseController.m */; };
 		CDDA4E951DED1B3900506B0A /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4E931DED1B3900506B0A /* UIView+frame.m */; };
 		CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4E961DED1BAF00506B0A /* SearchVC.m */; };
+		CDDA4EA91DED4E4000506B0A /* ClickVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4EA81DED4E4000506B0A /* ClickVC.m */; };
+		CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4EAA1DED509D00506B0A /* segementView.m */; };
+		CDDA4EC31DED61E500506B0A /* DSCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4EBF1DED61E500506B0A /* DSCarouselView.m */; };
+		CDDA4EC41DED61E500506B0A /* DSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4EC11DED61E500506B0A /* DSCollectionViewCell.m */; };
+		CDDA4EC51DED61E500506B0A /* DSCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDA4EC21DED61E500506B0A /* DSCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,15 @@
 		CDDA4E971DED1BAF00506B0A /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
 		CDDA4E991DED1C4F00506B0A /* Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.pch; sourceTree = "<group>"; };
 		CDDA4E9A1DED1C8400506B0A /* constans.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constans.h; sourceTree = "<group>"; };
+		CDDA4EA71DED4E4000506B0A /* ClickVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickVC.h; sourceTree = "<group>"; };
+		CDDA4EA81DED4E4000506B0A /* ClickVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickVC.m; sourceTree = "<group>"; };
+		CDDA4EAA1DED509D00506B0A /* segementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = segementView.m; sourceTree = "<group>"; };
+		CDDA4EAB1DED509D00506B0A /* segementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = segementView.h; sourceTree = "<group>"; };
+		CDDA4EBE1DED61E500506B0A /* DSCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCarouselView.h; sourceTree = "<group>"; };
+		CDDA4EBF1DED61E500506B0A /* DSCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCarouselView.m; sourceTree = "<group>"; };
+		CDDA4EC01DED61E500506B0A /* DSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCollectionViewCell.h; sourceTree = "<group>"; };
+		CDDA4EC11DED61E500506B0A /* DSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCollectionViewCell.m; sourceTree = "<group>"; };
+		CDDA4EC21DED61E500506B0A /* DSCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +222,8 @@
 				CDDA4E901DED1B2700506B0A /* SearchBaseController.m */,
 				CDDA4E971DED1BAF00506B0A /* SearchVC.h */,
 				CDDA4E961DED1BAF00506B0A /* SearchVC.m */,
+				CDDA4EAB1DED509D00506B0A /* segementView.h */,
+				CDDA4EAA1DED509D00506B0A /* segementView.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -237,6 +253,7 @@
 			children = (
 				CDDA4E931DED1B3900506B0A /* UIView+frame.m */,
 				CDDA4E941DED1B3900506B0A /* UIView+frame.h */,
+				CDDA4EBD1DED61E500506B0A /* DSCarouselView */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -286,6 +303,8 @@
 			children = (
 				CDDA4E811DED13CA00506B0A /* LessonVC.h */,
 				CDDA4E821DED13CA00506B0A /* LessonVC.m */,
+				CDDA4EA71DED4E4000506B0A /* ClickVC.h */,
+				CDDA4EA81DED4E4000506B0A /* ClickVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -348,6 +367,18 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		CDDA4EBD1DED61E500506B0A /* DSCarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA4EBE1DED61E500506B0A /* DSCarouselView.h */,
+				CDDA4EBF1DED61E500506B0A /* DSCarouselView.m */,
+				CDDA4EC01DED61E500506B0A /* DSCollectionViewCell.h */,
+				CDDA4EC11DED61E500506B0A /* DSCollectionViewCell.m */,
+				CDDA4EC21DED61E500506B0A /* DSCollectionViewCell.xib */,
+			);
+			path = DSCarouselView;
 			sourceTree = "<group>";
 		};
 		E8FD8D3333A074559E911922 /* Pods */ = {
@@ -472,6 +503,7 @@
 				CDA894AD1DEC39C00078D2FF /* LaunchScreen.storyboard in Resources */,
 				CDA894AA1DEC39C00078D2FF /* Assets.xcassets in Resources */,
 				CDA894A81DEC39C00078D2FF /* Main.storyboard in Resources */,
+				CDDA4EC51DED61E500506B0A /* DSCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,14 +580,18 @@
 				CDDA4E911DED1B2700506B0A /* BaseViewController.m in Sources */,
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,
 				CDDA4E8C1DED149C00506B0A /* NavigationVC.m in Sources */,
+				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
 				CDDA4E921DED1B2700506B0A /* SearchBaseController.m in Sources */,
+				CDDA4EC31DED61E500506B0A /* DSCarouselView.m in Sources */,
 				CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */,
 				CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */,
 				CDDA4E951DED1B3900506B0A /* UIView+frame.m in Sources */,
 				CDDA4E861DED13E700506B0A /* MineVC.m in Sources */,
+				CDDA4EA91DED4E4000506B0A /* ClickVC.m in Sources */,
 				CDA8949F1DEC39C00078D2FF /* main.m in Sources */,
 				CDDA4E831DED13CA00506B0A /* LessonVC.m in Sources */,
+				CDDA4EC41DED61E500506B0A /* DSCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +740,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 88UGLVT78T;
-				GCC_PREFIX_HEADER = /Users/kobe/Desktop/two/two/Header.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/two/Header.pch";
 				INFOPLIST_FILE = two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Xtiger.two;
@@ -718,7 +755,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 88UGLVT78T;
-				GCC_PREFIX_HEADER = /Users/kobe/Desktop/two/two/Header.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/two/Header.pch";
 				INFOPLIST_FILE = two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Xtiger.two;

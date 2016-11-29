@@ -10,6 +10,7 @@
 #import "SearchVC.h"
 @interface SearchBaseController ()
 @property(nonatomic,strong)UIButton *rightButton;
+@property(nonatomic,strong)UIViewController *leftController;
 @end
 
 @implementation SearchBaseController
@@ -33,5 +34,21 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
 }
 
+#pragma mark --- 使用的方法 ---
 
+- (void)leftImage:(NSString *)image push:(UIViewController *)controller{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(leftBtnAC)];
+    self.leftController = controller;
+}
+- (void)leftBtnAC{
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:self.leftController animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
+- (void)leftITitle:(NSString *)title push:(UIViewController *)controller{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(leftBtnAC)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.leftController = controller;
+}
 @end
