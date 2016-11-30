@@ -15,5 +15,5 @@
 #import <UIImageView+WebCache.h>
 #import "BaseViewController.h"
 #import "SearchBaseController.h"
-
+#import "AppDelegate.h"
 #endif /* Header_h */

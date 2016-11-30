@@ -34,7 +34,7 @@
 - (NSMutableArray *)segmentArray{
     if (!_segmentArray) {
         _segmentArray = [NSMutableArray array];
-        _segmentArray = @[@"精选推荐",@"课程分类"];
+        _segmentArray = [NSMutableArray arrayWithObjects:@"精选推荐",@"课程分类", nil];
     }
     return _segmentArray;
 }

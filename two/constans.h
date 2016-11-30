@@ -13,4 +13,5 @@
 #define KDScreenHeight     [[UIScreen mainScreen] bounds].size.height
 #define KDScreenWidth      [[UIScreen mainScreen] bounds].size.width
 #define navBarHeight   self.navigationController.navigationBar.frame.size.height
+#define ShareApp ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #endif /* constans_h */

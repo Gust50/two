@@ -7,23 +7,22 @@
 //
 
 #import "LessonVC.h"
-#import "ClickVC.h"
+#import "ClassficViewController.h"
 #import "segementView.h"
 #import "DSCarouselView.h"
-@interface LessonVC ()<segementViewDelegate>
-@property(nonatomic,strong)ClickVC *clickVC;
+#import "imageCell.h"
+
+@interface LessonVC ()<segementViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
 @property(nonatomic,strong)segementView *segmentView;
 @property(nonatomic,strong)DSCarouselView *carouseView;
 @property(nonatomic,strong)NSArray *imageArray;
+@property(nonatomic,strong)UICollectionView *collectionView;
+@property(nonatomic,strong)ClassficViewController *classficVC;
 @end
-
+static NSString *const cellID = @"cellID";
 @implementation LessonVC
-- (ClickVC *)clickVC{
-    if (!_clickVC) {
-        _clickVC = [ClickVC new];
-    }
-    return _clickVC;
-}
+
 - (segementView *)segmentView{
     if (!_segmentView) {
         _segmentView = [segementView new];
@@ -47,17 +46,39 @@
     }
     return _carouseView;
 }
+- (UICollectionView *)collectionView{
+    if (!_collectionView) {
+        UICollectionViewLayout *layout = [UICollectionViewLayout new];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        //        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    }
+    return _collectionView;
+}
+- (ClassficViewController *)classficVC{
+    if (!_classficVC) {
+        _classficVC = [ClassficViewController new];
+    }
+    return _classficVC;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"课程推荐";
     self.view.backgroundColor = [UIColor whiteColor];
-    [self leftITitle:@"点击这" push:self.clickVC];
+    [self leftITitle:@"点击这" push:nil];
     [self initUI];
 }
 - (void)initUI{
     [self.view addSubview:self.segmentView];
     [self.view addSubview:self.carouseView];
+    [self.view addSubview:self.collectionView];
+    [self.view addSubview:self.classficVC.view];
+    self.classficVC.view.hidden = YES;
     [self updateViewConstraints];
+//    [_collectionView registerClass:[imageCell class] forCellWithReuseIdentifier:cellID];
+    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellID];
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -71,18 +92,62 @@
         make.top.equalTo(_segmentView.mas_bottom);
         make.height.equalTo(@150);
     }];
+    [_collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view);
+        make.top.equalTo(_carouseView.mas_bottom);
+        make.height.equalTo(@100);
+        make.width.equalTo(@200);
+    }];
+    [_classficVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(weakSelf.view);
+        make.top.equalTo(_segmentView.mas_bottom);
+    }];
+}
+#pragma mark --- UICollectionViewDelegate ---
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 2;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+//    imageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    label.backgroundColor = [UIColor greenColor];
+    label.text = @"22";
+    [cell addSubview:label];
+//    cell.image = @"LaunchImageIPhone-700@2x";
+//    cell.backgroundColor = [UIColor blueColor];
+    return cell;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //选择
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(20, 20);
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    return 3;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    return 15;
+}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(0, 5, 0, 0);
 }
 
 #pragma mark --- segmentDelegate ---
 - (void)click:(UISegmentedControl *)currentIndex{
     if (currentIndex.selectedSegmentIndex == 0) {
-        [self.view addSubview:self.carouseView];
-        
+        self.carouseView.hidden = NO;
+        self.classficVC.view.hidden = YES;
     }
     else{
+        self.carouseView.hidden = YES;
+        self.classficVC.view.hidden = NO;
         
     }
 }
-
 
 @end

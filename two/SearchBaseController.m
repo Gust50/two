@@ -41,11 +41,22 @@
     self.leftController = controller;
 }
 - (void)leftBtnAC{
+    if (self.leftController == nil) {
+     [self performSelector:@selector(alertAC) withObject:self afterDelay:0.1];
+    }else{
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:self.leftController animated:YES];
     self.hidesBottomBarWhenPushed = NO;
+    }
 }
-
+- (void)alertAC{
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"关于作者" message:@"作者：gust，QQ：845975151，高仿原创所有，转载请注明出处，不可用于商业用途及其他不合法用途" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"同意" style:0 handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    [alertController addAction:action];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 - (void)leftITitle:(NSString *)title push:(UIViewController *)controller{
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(leftBtnAC)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
