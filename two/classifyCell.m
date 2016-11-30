@@ -71,10 +71,14 @@
     
 }
 
-- (void)setTitleStr:(NSString *)titleStr{
-    _label.text = titleStr;
-}
-- (void)setImageStr:(NSString *)imageStr{
-    _leftImage.image = [UIImage imageNamed:imageStr];
+//- (void)setTitleStr:(NSString *)titleStr{
+//    _label.text = titleStr;
+//}
+//- (void)setImageStr:(NSString *)imageStr{
+//    _leftImage.image = [UIImage imageNamed:imageStr];
+//}
+- (void)setModel:(classficModel *)model{
+    _label.text = model.title;
+    _leftImage.image = [UIImage imageNamed:model.image];
 }
 @end

@@ -11,14 +11,14 @@
 #import "segementView.h"
 #import "DSCarouselView.h"
 #import "imageCell.h"
-
-@interface LessonVC ()<segementViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-
+#import "ListViewController.h"
+@interface LessonVC ()<segementViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficViewControllerDelegate>
 @property(nonatomic,strong)segementView *segmentView;
 @property(nonatomic,strong)DSCarouselView *carouseView;
 @property(nonatomic,strong)NSArray *imageArray;
 @property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)ClassficViewController *classficVC;
+@property(nonatomic,strong)ListViewController *listVC;
 @end
 static NSString *const cellID = @"cellID";
 @implementation LessonVC
@@ -60,8 +60,15 @@ static NSString *const cellID = @"cellID";
 - (ClassficViewController *)classficVC{
     if (!_classficVC) {
         _classficVC = [ClassficViewController new];
+        _classficVC.delegate = self;
     }
     return _classficVC;
+}
+- (ListViewController *)listVC{
+    if (!_listVC) {
+        _listVC = [ListViewController new];
+    }
+    return _listVC;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -149,5 +156,10 @@ static NSString *const cellID = @"cellID";
         
     }
 }
-
+#pragma mark --- ClassficViewDelegate ---
+- (void)pushList{
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:self.listVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
 @end

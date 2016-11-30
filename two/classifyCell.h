@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "classficModel.h"
+//@class classficModel;
 @interface classifyCell : UITableViewCell
-@property(nonatomic,strong)NSString *titleStr;
-@property(nonatomic,strong)NSString *imageStr;
+//@property(nonatomic,strong)NSString *titleStr;
+//@property(nonatomic,strong)NSString *imageStr;
+@property(nonatomic,strong)classficModel *model;
 @end

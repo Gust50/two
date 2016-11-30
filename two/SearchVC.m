@@ -53,19 +53,18 @@
 - (UIView *)searchView{
     if (!_searchView) {
         _searchView = [UIView new];
-        _searchView.backgroundColor = [UIColor orangeColor];
+        _searchView.backgroundColor = [UIColor whiteColor];
     }
     return _searchView;
 }
 - (UITextField *)searchField{
     if (!_searchField) {
         _searchField = [UITextField new];
-        _searchField.placeholder = @"搜索iphone试试";
-        _searchField.backgroundColor = [UIColor whiteColor];
+        _searchField.placeholder = @"请‘“尝试语音输入课程”";
+        _searchField.backgroundColor = RGB(200, 200, 200);
         _searchField.layer.cornerRadius = 10;
         _searchField.leftView = self.leftView;
         _searchField.leftViewMode = UITextFieldViewModeAlways;
-        
     }
     return _searchField;
 }
@@ -82,14 +81,15 @@
 - (UIButton *)searchBtn{
     if (!_searchBtn) {
         _searchBtn = [UIButton new];
-        [_searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
+        [_searchBtn setImage:[UIImage imageNamed:@"voice@2x"]  forState:UIControlStateNormal];
         [_searchBtn addTarget:self action:@selector(searchAC) forControlEvents:UIControlEventTouchUpInside];
     }
     return _searchBtn;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"商品搜索";
+    [self rightTitle:@"搜索" push:nil];
+    self.title = @"课程详情";
     [self initUI];
 }
 - (void)initUI{
@@ -118,7 +118,7 @@
     }];
     [_searchField mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_searchView.mas_left).offset(20);
-        make.right.equalTo(_searchView.mas_right).offset(-70);
+        make.right.equalTo(_searchView.mas_right).offset(-45);
         make.centerY.equalTo(_searchView.mas_centerY);
         make.height.equalTo(@30);
         
@@ -126,7 +126,7 @@
     [_searchBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_searchView.mas_right).offset(-10);
         make.centerY.equalTo(_searchField.mas_centerY);
-        make.size.mas_equalTo(CGSizeMake(40, 20));
+        make.size.mas_equalTo(CGSizeMake(45, 32));
     }];
     [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(weakSelf.view);
@@ -155,10 +155,5 @@
     [hud show:YES];
     [hud hide:YES afterDelay:2];
 }
-
-
-
-
-
 
 @end

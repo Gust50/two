@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClassficViewController : UIViewController
-
+@protocol ClassficViewControllerDelegate<NSObject>
+- (void)pushList;
+@end
+@interface ClassficViewController : BaseViewController
+@property(nonatomic,weak)id<ClassficViewControllerDelegate>delegate;
 @end

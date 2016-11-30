@@ -110,6 +110,8 @@
 		CDF43E531DEEA91700AD1CB9 /* classCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E521DEEA91700AD1CB9 /* classCategory.plist */; };
 		CDF43E551DEEAA1100AD1CB9 /* InfoConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E541DEEAA1100AD1CB9 /* InfoConfig.plist */; };
 		CDF43E571DEEAB7700AD1CB9 /* iCategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E561DEEAB7700AD1CB9 /* iCategoryList.plist */; };
+		CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E591DEEB2B700AD1CB9 /* classficModel.m */; };
+		CDF43E5D1DEEC44000AD1CB9 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +262,10 @@
 		CDF43E521DEEA91700AD1CB9 /* classCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = classCategory.plist; sourceTree = "<group>"; };
 		CDF43E541DEEAA1100AD1CB9 /* InfoConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = InfoConfig.plist; sourceTree = "<group>"; };
 		CDF43E561DEEAB7700AD1CB9 /* iCategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = iCategoryList.plist; sourceTree = "<group>"; };
+		CDF43E581DEEB2B700AD1CB9 /* classficModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classficModel.h; sourceTree = "<group>"; };
+		CDF43E591DEEB2B700AD1CB9 /* classficModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = classficModel.m; sourceTree = "<group>"; };
+		CDF43E5B1DEEC44000AD1CB9 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +477,8 @@
 				CDDA4E821DED13CA00506B0A /* LessonVC.m */,
 				CDF43E4C1DEE834C00AD1CB9 /* ClassficViewController.h */,
 				CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */,
+				CDF43E5B1DEEC44000AD1CB9 /* ListViewController.h */,
+				CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -489,6 +497,8 @@
 		CDDA4EA01DED20A200506B0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CDF43E581DEEB2B700AD1CB9 /* classficModel.h */,
+				CDF43E591DEEB2B700AD1CB9 /* classficModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -949,12 +959,14 @@
 				CDF43E4B1DEE5DCD00AD1CB9 /* imageCell.m in Sources */,
 				CDDA4E891DED142700506B0A /* DownLoadVC.m in Sources */,
 				CDDA4E911DED1B2700506B0A /* BaseViewController.m in Sources */,
+				CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */,
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,
 				CDDA4E8C1DED149C00506B0A /* NavigationVC.m in Sources */,
 				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
 				CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */,
 				CDDA4E921DED1B2700506B0A /* SearchBaseController.m in Sources */,
+				CDF43E5D1DEEC44000AD1CB9 /* ListViewController.m in Sources */,
 				CDF43E511DEE9DFF00AD1CB9 /* classifyCell.m in Sources */,
 				CDDA4EC31DED61E500506B0A /* DSCarouselView.m in Sources */,
 				CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */,

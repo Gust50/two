@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
-- (void)rightItem:(NSString *)image push:(UIViewController *)controller;///导航栏右边的按钮
+- (void)rightImage:(NSString *)image push:(UIViewController *)controller;///导航栏右边的按钮
+- (void)rightTitle:(NSString *)title push:(UIViewController *)controller;///导航栏右边的文字
 @end
