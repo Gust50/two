@@ -106,6 +106,10 @@
 		CDF43E481DEE572000AD1CB9 /* bottom_tab3_unpre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF43DFD1DEE572000AD1CB9 /* bottom_tab3_unpre@2x.png */; };
 		CDF43E4B1DEE5DCD00AD1CB9 /* imageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E4A1DEE5DCD00AD1CB9 /* imageCell.m */; };
 		CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */; };
+		CDF43E511DEE9DFF00AD1CB9 /* classifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */; };
+		CDF43E531DEEA91700AD1CB9 /* classCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E521DEEA91700AD1CB9 /* classCategory.plist */; };
+		CDF43E551DEEAA1100AD1CB9 /* InfoConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E541DEEAA1100AD1CB9 /* InfoConfig.plist */; };
+		CDF43E571DEEAB7700AD1CB9 /* iCategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E561DEEAB7700AD1CB9 /* iCategoryList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +255,11 @@
 		CDF43E4A1DEE5DCD00AD1CB9 /* imageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageCell.m; sourceTree = "<group>"; };
 		CDF43E4C1DEE834C00AD1CB9 /* ClassficViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassficViewController.h; sourceTree = "<group>"; };
 		CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassficViewController.m; sourceTree = "<group>"; };
+		CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = classifyCell.m; sourceTree = "<group>"; };
+		CDF43E501DEE9DFF00AD1CB9 /* classifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classifyCell.h; sourceTree = "<group>"; };
+		CDF43E521DEEA91700AD1CB9 /* classCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = classCategory.plist; sourceTree = "<group>"; };
+		CDF43E541DEEAA1100AD1CB9 /* InfoConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = InfoConfig.plist; sourceTree = "<group>"; };
+		CDF43E561DEEAB7700AD1CB9 /* iCategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = iCategoryList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +398,9 @@
 				CDF43DAD1DEE572000AD1CB9 /* Resource */,
 				CDA894A91DEC39C00078D2FF /* Assets.xcassets */,
 				CDA894AE1DEC39C00078D2FF /* Info.plist */,
+				CDF43E521DEEA91700AD1CB9 /* classCategory.plist */,
+				CDF43E541DEEAA1100AD1CB9 /* InfoConfig.plist */,
+				CDF43E561DEEAB7700AD1CB9 /* iCategoryList.plist */,
 			);
 			name = Entrance;
 			sourceTree = "<group>";
@@ -468,6 +480,8 @@
 			children = (
 				CDF43E491DEE5DCD00AD1CB9 /* imageCell.h */,
 				CDF43E4A1DEE5DCD00AD1CB9 /* imageCell.m */,
+				CDF43E501DEE9DFF00AD1CB9 /* classifyCell.h */,
+				CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -785,12 +799,14 @@
 				CDF43E241DEE572000AD1CB9 /* course_info_icon.png in Resources */,
 				CDF43E3C1DEE572000AD1CB9 /* LaunchImageIPhone-568h@2x.png in Resources */,
 				CDF43E461DEE572000AD1CB9 /* bottom_tab2_unpre@2x.png in Resources */,
+				CDF43E551DEEAA1100AD1CB9 /* InfoConfig.plist in Resources */,
 				CDF43E121DEE572000AD1CB9 /* channel_icon_servant_pre.png in Resources */,
 				CDF43E1D1DEE572000AD1CB9 /* course_studs_nums.png in Resources */,
 				CDA894AD1DEC39C00078D2FF /* LaunchScreen.storyboard in Resources */,
 				CDF43E111DEE572000AD1CB9 /* channel_icon_school_unpre.png in Resources */,
 				CDF43E351DEE572000AD1CB9 /* file_tital_back_but@2x.png in Resources */,
 				CDF43E191DEE572000AD1CB9 /* course_info_bg_collect@2x.png in Resources */,
+				CDF43E571DEEAB7700AD1CB9 /* iCategoryList.plist in Resources */,
 				CDA894AA1DEC39C00078D2FF /* Assets.xcassets in Resources */,
 				CDF43E021DEE572000AD1CB9 /* channel_icon_college_pre.png in Resources */,
 				CDF43E2A1DEE572000AD1CB9 /* school_pic1@2x.jpg in Resources */,
@@ -811,6 +827,7 @@
 				CDF43E3E1DEE572000AD1CB9 /* LaunchImageIPhone-800-667h@2x.png in Resources */,
 				CDF43E421DEE572000AD1CB9 /* icon_listheader_animation_2@2x.png in Resources */,
 				CDF43E001DEE572000AD1CB9 /* channel_icon_certificate_pre.png in Resources */,
+				CDF43E531DEEA91700AD1CB9 /* classCategory.plist in Resources */,
 				CDF43E371DEE572000AD1CB9 /* test_status_end.png in Resources */,
 				CDF43E0C1DEE572000AD1CB9 /* channel_icon_live_pre.png in Resources */,
 				CDF43E081DEE572000AD1CB9 /* channel_icon_foreign_pre.png in Resources */,
@@ -938,6 +955,7 @@
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
 				CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */,
 				CDDA4E921DED1B2700506B0A /* SearchBaseController.m in Sources */,
+				CDF43E511DEE9DFF00AD1CB9 /* classifyCell.m in Sources */,
 				CDDA4EC31DED61E500506B0A /* DSCarouselView.m in Sources */,
 				CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */,
 				CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */,
