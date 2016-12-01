@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"离线下载";
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end

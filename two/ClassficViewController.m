@@ -9,8 +9,9 @@
 #import "ClassficViewController.h"
 #import "classifyCell.h"
 #import "classficModel.h"
-#import "MJExtension.h"
+
 #import "oneCell.h"
+
 @interface ClassficViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     classficModel *classModel;
@@ -18,7 +19,7 @@
 }
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray *array;
-@property(nonatomic,strong)NSArray *listArray;
+@property(nonatomic,strong)NSMutableArray *listArray;
 
 @end
 static NSString *const cellID = @"cellID";
@@ -40,10 +41,11 @@ static NSString *const oneID = @"oneID";
     }
     return _array;
 }
-- (NSArray *)listArray{
+- (NSMutableArray *)listArray{
     if (!_listArray) {
-        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"iCategoryList.plist" ofType:nil];
-        _listArray = [[NSArray alloc] initWithContentsOfFile:plistPath];
+//        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"iCategoryList.plist" ofType:nil];
+//        _listArray = [[NSArray alloc] initWithContentsOfFile:plistPath];
+        _listArray = [NSMutableArray array];
     }
     return _listArray;
 }
@@ -57,10 +59,13 @@ static NSString *const oneID = @"oneID";
     [self initUI];
 }
 - (void)initUI{
+    [self loadNewData];
     [self.view addSubview:self.tableView];
+    
     [self updateViewConstraints];
     [_tableView registerClass:[classifyCell class] forCellReuseIdentifier:cellID];
     [_tableView registerClass:[oneCell class] forCellReuseIdentifier:oneID];
+    [self.tableView reloadData];
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -78,16 +83,18 @@ static NSString *const oneID = @"oneID";
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (_index == 0) {
+        return 80;
+    }else{
     return 60;
+    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_index == 0) {
-       
         oneCell *cell = [tableView dequeueReusableCellWithIdentifier:oneID forIndexPath:indexPath];
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        NSDictionary *dataDic = _listArray[indexPath.row];
-//        _listModel = [listModel mj_objectWithKeyValues:dataDic];
-//        cell.model = _listModel;
+        NSDictionary *dataDic = _listArray[indexPath.row];
+        _listModel = [listModel mj_objectWithKeyValues:dataDic];
+        cell.model = _listModel;
         return cell;
     }
     else{
@@ -116,5 +123,30 @@ static NSString *const oneID = @"oneID";
     
     _index = index;
     [_tableView reloadData];
+}
+-(void)loadNewData{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getRecommendData];
+    });
+}
+- (void)getRecommendData{
+     NSLog(@"正则2");
+    [[NetworkSingleton sharedManager] getRecommendCourseResult:nil url:RecommentedUrl successBlock:^(id responseBody) {
+        _listArray = [responseBody objectForKey:@"CourseList"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+       
+//        NSMutableArray *courseArray = [responseBody objectForKey:@"CourseList"];
+//        NSMutableArray *albumArray = [responseBody objectForKey:@"AlbumList"];
+//        for (int i = 0; i < focusArray.count; ++i) {
+//            _listModel = [listModel mj_objectWithKeyValues:focusArray[i]];
+//            [_listArray addObject:_listModel];
+//            
+//        }
+    } failureBlock:^(NSString *error) {
+        [SVProgressHUD showErrorWithStatus:error];
+    }];
+   
 }
 @end

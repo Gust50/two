@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的传课";
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end

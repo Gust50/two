@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00D1D8EB76679343ADFF4D08 /* libPods-two.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A93E7C1A2609965E890D1 /* libPods-two.a */; };
 		CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430CA1DEFA90000B9B74E /* oneCell.m */; };
+		CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
 		CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A41DEC39C00078D2FF /* ViewController.m */; };
@@ -138,6 +139,9 @@
 		B24A93E7C1A2609965E890D1 /* libPods-two.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-two.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1430CA1DEFA90000B9B74E /* oneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneCell.m; sourceTree = "<group>"; };
 		CD1430CB1DEFA90000B9B74E /* oneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneCell.h; sourceTree = "<group>"; };
+		CD1430D41DEFCD2900B9B74E /* NetworkSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSingleton.h; sourceTree = "<group>"; };
+		CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkSingleton.m; sourceTree = "<group>"; };
+		CD1430D81DEFCF4100B9B74E /* HeaderUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderUrl.h; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA8949E1DEC39C00078D2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA894A01DEC39C00078D2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -305,6 +309,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD1430D31DEFCD2900B9B74E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CD1430D41DEFCD2900B9B74E /* NetworkSingleton.h */,
+				CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */,
+			);
+			name = Network;
+			path = DSCarouselView/Network;
+			sourceTree = "<group>";
+		};
+		CD1430D71DEFCD3400B9B74E /* UIView+frame */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA4E941DED1B3900506B0A /* UIView+frame.h */,
+				CDDA4E931DED1B3900506B0A /* UIView+frame.m */,
+			);
+			name = "UIView+frame";
+			sourceTree = "<group>";
+		};
 		CDA894911DEC39C00078D2FF = {
 			isa = PBXGroup;
 			children = (
@@ -334,8 +357,8 @@
 			children = (
 				CDDA4E7D1DED0F7300506B0A /* TarBar */,
 				CDDA4E7C1DED0F5400506B0A /* Tool */,
-				CDDA4E7B1DED0F4300506B0A /* Other */,
 				CDDA4E791DED0EA400506B0A /* Main */,
+				CDDA4E7B1DED0F4300506B0A /* Other */,
 				CDDA4E7A1DED0F0700506B0A /* Entrance */,
 			);
 			path = two;
@@ -419,6 +442,7 @@
 			children = (
 				CDDA4E991DED1C4F00506B0A /* Header.pch */,
 				CDDA4E9A1DED1C8400506B0A /* constans.h */,
+				CD1430D81DEFCF4100B9B74E /* HeaderUrl.h */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -426,8 +450,8 @@
 		CDDA4E7C1DED0F5400506B0A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				CDDA4E931DED1B3900506B0A /* UIView+frame.m */,
-				CDDA4E941DED1B3900506B0A /* UIView+frame.h */,
+				CD1430D71DEFCD3400B9B74E /* UIView+frame */,
+				CD1430D31DEFCD2900B9B74E /* Network */,
 				CDDA4EBD1DED61E500506B0A /* DSCarouselView */,
 			);
 			name = Tool;
@@ -967,6 +991,7 @@
 				CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */,
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,
 				CDDA4E8C1DED149C00506B0A /* NavigationVC.m in Sources */,
+				CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */,
 				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
 				CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,

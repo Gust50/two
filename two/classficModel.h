@@ -12,9 +12,13 @@
 @property(nonatomic,strong)NSString *title;
 @property(nonatomic,strong)NSString *image;
 @end
+
 @interface listModel : NSObject
 @property(nonatomic,strong)NSString *CourseName;
 @property(nonatomic,strong)NSString *Brief;
 @property(nonatomic,strong)NSString *PhotoURL;
+@end
 
+@interface circleModel : NSObject
+@property(nonatomic,strong)NSString *PhotoURL;
 @end

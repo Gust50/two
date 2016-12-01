@@ -27,7 +27,7 @@
         _nameLabel = [UILabel new];
         _nameLabel.text = @"计算机网络原理";
         _nameLabel.textAlignment = NSTextAlignmentLeft;
-        _nameLabel.tintColor = [UIColor blackColor];
+        _nameLabel.textColor = [UIColor blackColor];
         _nameLabel.backgroundColor = [UIColor whiteColor];
         _nameLabel.font = [UIFont systemFontOfSize:18];
     }
@@ -38,7 +38,7 @@
         _sublabel = [UILabel new];
         _sublabel.text = @"西安交大网络公开课";
         _sublabel.textAlignment = NSTextAlignmentLeft;
-        _sublabel.tintColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0];
+        _sublabel.textColor = [UIColor colorWithRed:185/255.0 green:185/255.0 blue:185/255.0 alpha:1.0];
 //        _sublabel.backgroundColor = [UIColor whiteColor];
         _sublabel.font = [UIFont systemFontOfSize:14];
     }
@@ -61,20 +61,21 @@
     [super updateConstraints];
     WS(weakSelf);
     [_iconView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(weakSelf).offset(5);
-        make.height.equalTo(@50);
-        make.width.equalTo(@60);
+        make.left.equalTo(weakSelf).offset(10);
+        make.centerY.equalTo(weakSelf);
+        make.height.equalTo(@52);
+        make.width.equalTo(@80);
     }];
     [_nameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_iconView.mas_right).offset(5);
+        make.left.equalTo(_iconView.mas_right).offset(10);
         make.right.equalTo(weakSelf);
-        make.top.equalTo(_iconView.mas_top).offset(0);
+        make.top.equalTo(_iconView.mas_top).offset(2);
         make.height.equalTo(@20);
     }];
     [_sublabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_nameLabel);
         make.right.equalTo(weakSelf);
-        make.bottom.equalTo(_iconView.mas_bottom).offset(-10);
+        make.bottom.equalTo(_iconView.mas_bottom).offset(-5);
         make.height.equalTo(@15);
     }];
 }
@@ -83,6 +84,6 @@
     NSLog(@"%@%@%@",model.CourseName,model.Brief,model.PhotoURL);
     _nameLabel.text = model.CourseName;
     _sublabel.text = model.Brief;
-    _iconView.image = [UIImage imageNamed:model.PhotoURL];
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:model.PhotoURL]];
 }
 @end

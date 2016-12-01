@@ -12,13 +12,15 @@
 #import "DSCarouselView.h"
 #import "imageCell.h"
 #import "ListViewController.h"
+#import "classficModel.h"
 @interface LessonVC ()<segementViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficViewControllerDelegate>
 {
     NSInteger _index;
+    circleModel *_circleModel;
 }
 @property(nonatomic,strong)segementView *segmentView;
 @property(nonatomic,strong)DSCarouselView *carouseView;
-@property(nonatomic,strong)NSArray *imageArray;
+@property(nonatomic,strong)NSMutableArray *imageArray;
 @property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)ClassficViewController *classficVC;
 @property(nonatomic,strong)ListViewController *listVC;
@@ -35,20 +37,21 @@ static NSString *const cellID = @"cellID";
     }
     return _segmentView;
 }
-- (NSArray *)imageArray{
+- (NSMutableArray *)imageArray{
     if (!_imageArray) {
-        _imageArray = @[@"http://pub.chinaunix.net/uploadfile/201204/20120422080605427.jpg",
-          @"http://imgsrc.baidu.com/forum/w%3D580/sign=0c1b13ef0c3387449cc52f74610ed937/bf94b9315c6034a8a4e0f53ecb13495408237644.jpg",
-          @"http://hiphotos.baidu.com/%95%D7%D4%AA%B5%C0/pic/item/432e6436d9cd9b4deac4af86.jpg"];
+//        _imageArray = @[@"http://pub.chinaunix.net/uploadfile/201204/20120422080605427.jpg",
+//          @"http://imgsrc.baidu.com/forum/w%3D580/sign=0c1b13ef0c3387449cc52f74610ed937/bf94b9315c6034a8a4e0f53ecb13495408237644.jpg",
+//          @"http://hiphotos.baidu.com/%95%D7%D4%AA%B5%C0/pic/item/432e6436d9cd9b4deac4af86.jpg"];
+        _imageArray = [NSMutableArray array];
     }
     return _imageArray;
 }
-- (DSCarouselView *)carouseView{
-    if (!_carouseView) {
-        _carouseView = [DSCarouselView carouseViewWithImageURLs:self.imageArray placeholder:nil];
-    }
-    return _carouseView;
-}
+//- (DSCarouselView *)carouseView{
+//    if (!_carouseView) {
+//        _carouseView = [DSCarouselView carouseViewWithImageURLs:self.imageArray placeholder:nil];
+//    }
+//    return _carouseView;
+//}
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
         UICollectionViewLayout *layout = [UICollectionViewLayout new];
@@ -76,16 +79,20 @@ static NSString *const cellID = @"cellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     _index = 0;
+    _classficVC.index = _index;
+    _circleModel = [circleModel new];
     self.title = @"课程推荐";
     self.view.backgroundColor = [UIColor whiteColor];
     [self leftITitle:@"点击这" push:nil];
     [self initUI];
 }
 - (void)initUI{
+    [self loadNewData];
     [self.view addSubview:self.segmentView];
-    [self.view addSubview:self.carouseView];
+//    [self.view addSubview:self.carouseView];
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.classficVC.view];
+    
     [self updateViewConstraints];
 //    [_collectionView registerClass:[imageCell class] forCellWithReuseIdentifier:cellID];
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellID];
@@ -97,14 +104,14 @@ static NSString *const cellID = @"cellID";
         make.left.top.right.equalTo(weakSelf.view);
         make.height.equalTo(@45);
     }];
-    [_carouseView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(weakSelf.view);
-        make.top.equalTo(_segmentView.mas_bottom);
-        make.height.equalTo(@150);
-    }];
+//    [_carouseView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.equalTo(weakSelf.view);
+//        make.top.equalTo(_segmentView.mas_bottom);
+//        make.height.equalTo(@150);
+//    }];
     [_collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.view);
-        make.top.equalTo(_carouseView.mas_bottom);
+        make.top.equalTo(@195);
         make.height.equalTo(@100);
         make.width.equalTo(@200);
     }];
@@ -115,7 +122,7 @@ static NSString *const cellID = @"cellID";
             make.top.equalTo(_collectionView.mas_bottom);
         }];
     }else{
-        
+    
     [_classficVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(weakSelf.view);
         make.top.equalTo(_segmentView.mas_bottom);
@@ -154,6 +161,34 @@ static NSString *const cellID = @"cellID";
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(0, 5, 0, 0);
+}
+-(void)loadNewData{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getRecommendData];
+    });
+}
+- (void)getRecommendData{
+    NSLog(@"正则2");
+    [[NetworkSingleton sharedManager] getRecommendCourseResult:nil url:RecommentedUrl successBlock:^(id responseBody) {
+        NSMutableArray *focusArray = [responseBody objectForKey:@"FocusList"];
+        NSLog(@"数组%@",focusArray);
+        NSMutableArray  *array = [NSMutableArray array];
+        for (NSDictionary *d in focusArray) {
+            _circleModel = [circleModel mj_objectWithKeyValues:d];
+            [array addObject:_circleModel.PhotoURL];
+        }
+     self.imageArray = array;
+        NSLog(@"图片%@",array);
+    } failureBlock:^(NSString *error) {
+        [SVProgressHUD showErrorWithStatus:error];
+    }];
+   
+    _carouseView = [[DSCarouselView alloc] initWithFrame:CGRectMake(0, 45, self.view.width, 150)];
+    _carouseView.backgroundColor = [UIColor blueColor];
+    _carouseView = [DSCarouselView carouseViewWithImageURLs:self.imageArray placeholder:nil];
+  
+    [self.view addSubview:self.carouseView];
+   
 }
 
 #pragma mark --- segmentDelegate ---

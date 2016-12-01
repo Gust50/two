@@ -9,6 +9,7 @@
 #ifndef Header_h
 #define Header_h
 #import "Constans.h"
+#import "HeaderUrl.h"
 #import <masonry.h>
 #import <MBProgressHUD.h>
 #import "UIView+frame.h"
@@ -16,4 +17,7 @@
 #import "BaseViewController.h"
 #import "SearchBaseController.h"
 #import "AppDelegate.h"
+#import <SVProgressHUD.h>
+#import "NetworkSingleton.h"
+#import "MJExtension.h"
 #endif /* Header_h */
