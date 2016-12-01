@@ -46,6 +46,7 @@
     return self;
 }
 - (void)initUI{
+    
     [self addSubview:self.leftImage];
     [self addSubview:self.label];
     [self addSubview:self.lineView];
@@ -71,12 +72,6 @@
     
 }
 
-//- (void)setTitleStr:(NSString *)titleStr{
-//    _label.text = titleStr;
-//}
-//- (void)setImageStr:(NSString *)imageStr{
-//    _leftImage.image = [UIImage imageNamed:imageStr];
-//}
 - (void)setModel:(classficModel *)model{
     _label.text = model.title;
     _leftImage.image = [UIImage imageNamed:model.image];

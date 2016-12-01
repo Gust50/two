@@ -13,6 +13,9 @@
 #import "imageCell.h"
 #import "ListViewController.h"
 @interface LessonVC ()<segementViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficViewControllerDelegate>
+{
+    NSInteger _index;
+}
 @property(nonatomic,strong)segementView *segmentView;
 @property(nonatomic,strong)DSCarouselView *carouseView;
 @property(nonatomic,strong)NSArray *imageArray;
@@ -72,6 +75,7 @@ static NSString *const cellID = @"cellID";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _index = 0;
     self.title = @"课程推荐";
     self.view.backgroundColor = [UIColor whiteColor];
     [self leftITitle:@"点击这" push:nil];
@@ -82,7 +86,6 @@ static NSString *const cellID = @"cellID";
     [self.view addSubview:self.carouseView];
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.classficVC.view];
-    self.classficVC.view.hidden = YES;
     [self updateViewConstraints];
 //    [_collectionView registerClass:[imageCell class] forCellWithReuseIdentifier:cellID];
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellID];
@@ -105,10 +108,19 @@ static NSString *const cellID = @"cellID";
         make.height.equalTo(@100);
         make.width.equalTo(@200);
     }];
+    if (_index == 0) {
+       
+        [_classficVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(weakSelf.view);
+            make.top.equalTo(_collectionView.mas_bottom);
+        }];
+    }else{
+        
     [_classficVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(weakSelf.view);
         make.top.equalTo(_segmentView.mas_bottom);
     }];
+    }
 }
 #pragma mark --- UICollectionViewDelegate ---
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -122,7 +134,7 @@ static NSString *const cellID = @"cellID";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     label.backgroundColor = [UIColor greenColor];
-    label.text = @"22";
+    
     [cell addSubview:label];
 //    cell.image = @"LaunchImageIPhone-700@2x";
 //    cell.backgroundColor = [UIColor blueColor];
@@ -146,14 +158,16 @@ static NSString *const cellID = @"cellID";
 
 #pragma mark --- segmentDelegate ---
 - (void)click:(UISegmentedControl *)currentIndex{
+    _index = currentIndex.selectedSegmentIndex;
+    [self updateViewConstraints];
+    _classficVC.index = _index;
     if (currentIndex.selectedSegmentIndex == 0) {
+       
         self.carouseView.hidden = NO;
-        self.classficVC.view.hidden = YES;
     }
     else{
-        self.carouseView.hidden = YES;
-        self.classficVC.view.hidden = NO;
         
+        self.carouseView.hidden = YES;
     }
 }
 #pragma mark --- ClassficViewDelegate ---

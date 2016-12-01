@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00D1D8EB76679343ADFF4D08 /* libPods-two.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A93E7C1A2609965E890D1 /* libPods-two.a */; };
+		CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430CA1DEFA90000B9B74E /* oneCell.m */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
 		CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A41DEC39C00078D2FF /* ViewController.m */; };
@@ -135,6 +136,8 @@
 		010167A0C2A5A9C0A50ADCDC /* Pods-two.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-two.release.xcconfig"; path = "Pods/Target Support Files/Pods-two/Pods-two.release.xcconfig"; sourceTree = "<group>"; };
 		85818A108489FB7D925A2420 /* Pods-two.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-two.debug.xcconfig"; path = "Pods/Target Support Files/Pods-two/Pods-two.debug.xcconfig"; sourceTree = "<group>"; };
 		B24A93E7C1A2609965E890D1 /* libPods-two.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-two.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1430CA1DEFA90000B9B74E /* oneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneCell.m; sourceTree = "<group>"; };
+		CD1430CB1DEFA90000B9B74E /* oneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneCell.h; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA8949E1DEC39C00078D2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA894A01DEC39C00078D2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -486,6 +489,8 @@
 		CDDA4E9F1DED209600506B0A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD1430CB1DEFA90000B9B74E /* oneCell.h */,
+				CD1430CA1DEFA90000B9B74E /* oneCell.m */,
 				CDF43E491DEE5DCD00AD1CB9 /* imageCell.h */,
 				CDF43E4A1DEE5DCD00AD1CB9 /* imageCell.m */,
 				CDF43E501DEE9DFF00AD1CB9 /* classifyCell.h */,
@@ -963,6 +968,7 @@
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,
 				CDDA4E8C1DED149C00506B0A /* NavigationVC.m in Sources */,
 				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
+				CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
 				CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */,
 				CDDA4E921DED1B2700506B0A /* SearchBaseController.m in Sources */,

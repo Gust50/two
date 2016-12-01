@@ -10,10 +10,11 @@
 #import "classifyCell.h"
 #import "classficModel.h"
 #import "MJExtension.h"
-
+#import "oneCell.h"
 @interface ClassficViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     classficModel *classModel;
+    listModel *_listModel;
 }
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray *array;
@@ -21,6 +22,7 @@
 
 @end
 static NSString *const cellID = @"cellID";
+static NSString *const oneID = @"oneID";
 @implementation ClassficViewController
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -48,14 +50,17 @@ static NSString *const cellID = @"cellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _index = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     classModel = [classficModel new];
+    _listModel = [listModel new];
     [self initUI];
 }
 - (void)initUI{
     [self.view addSubview:self.tableView];
     [self updateViewConstraints];
     [_tableView registerClass:[classifyCell class] forCellReuseIdentifier:cellID];
+    [_tableView registerClass:[oneCell class] forCellReuseIdentifier:oneID];
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -63,20 +68,38 @@ static NSString *const cellID = @"cellID";
     [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(weakSelf.view);
     }];
+   
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.array.count;
+    if (_index == 0) {
+        return self.listArray.count;
+    }else{
+        return self.array.count;
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (_index == 0) {
+       
+        oneCell *cell = [tableView dequeueReusableCellWithIdentifier:oneID forIndexPath:indexPath];
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        NSDictionary *dataDic = _listArray[indexPath.row];
+//        _listModel = [listModel mj_objectWithKeyValues:dataDic];
+//        cell.model = _listModel;
+        return cell;
+    }
+    else{
+        
     classifyCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSDictionary *dataDic = _array[indexPath.row];
     classModel = [classficModel mj_objectWithKeyValues:dataDic];
     cell.model = classModel;
-    return cell;
+        return cell;
+    }
+    
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //     NSDictionary *listDic = _listArray[indexPath.row-1];
@@ -88,5 +111,10 @@ static NSString *const cellID = @"cellID";
     if (self.delegate && [self.delegate respondsToSelector:@selector(pushList)]) {
         [self.delegate pushList];
     }
+}
+-(void)setIndex:(NSInteger)index{
+    
+    _index = index;
+    [_tableView reloadData];
 }
 @end

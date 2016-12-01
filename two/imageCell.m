@@ -20,9 +20,10 @@
     }
     return _imageView;
 }
+
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor blueColor];
+        
         [self initUI];
     }
     return self;

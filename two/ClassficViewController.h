@@ -12,5 +12,6 @@
 - (void)pushList;
 @end
 @interface ClassficViewController : BaseViewController
+@property(nonatomic,assign)NSInteger index;
 @property(nonatomic,weak)id<ClassficViewControllerDelegate>delegate;
 @end
