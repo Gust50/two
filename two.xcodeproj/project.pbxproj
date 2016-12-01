@@ -10,6 +10,8 @@
 		00D1D8EB76679343ADFF4D08 /* libPods-two.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A93E7C1A2609965E890D1 /* libPods-two.a */; };
 		CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430CA1DEFA90000B9B74E /* oneCell.m */; };
 		CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */; };
+		CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D91DF007BB00B9B74E /* twoCell.m */; };
+		CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430DC1DF0084100B9B74E /* MainVC.m */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
 		CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A41DEC39C00078D2FF /* ViewController.m */; };
@@ -106,7 +108,6 @@
 		CDF43E461DEE572000AD1CB9 /* bottom_tab2_unpre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF43DFB1DEE572000AD1CB9 /* bottom_tab2_unpre@2x.png */; };
 		CDF43E471DEE572000AD1CB9 /* bottom_tab3_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF43DFC1DEE572000AD1CB9 /* bottom_tab3_pre@2x.png */; };
 		CDF43E481DEE572000AD1CB9 /* bottom_tab3_unpre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF43DFD1DEE572000AD1CB9 /* bottom_tab3_unpre@2x.png */; };
-		CDF43E4B1DEE5DCD00AD1CB9 /* imageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E4A1DEE5DCD00AD1CB9 /* imageCell.m */; };
 		CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */; };
 		CDF43E511DEE9DFF00AD1CB9 /* classifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */; };
 		CDF43E531DEEA91700AD1CB9 /* classCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E521DEEA91700AD1CB9 /* classCategory.plist */; };
@@ -142,6 +143,10 @@
 		CD1430D41DEFCD2900B9B74E /* NetworkSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSingleton.h; sourceTree = "<group>"; };
 		CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkSingleton.m; sourceTree = "<group>"; };
 		CD1430D81DEFCF4100B9B74E /* HeaderUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderUrl.h; sourceTree = "<group>"; };
+		CD1430D91DF007BB00B9B74E /* twoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoCell.m; sourceTree = "<group>"; };
+		CD1430DA1DF007BB00B9B74E /* twoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoCell.h; sourceTree = "<group>"; };
+		CD1430DC1DF0084100B9B74E /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		CD1430DD1DF0084100B9B74E /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA8949E1DEC39C00078D2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA894A01DEC39C00078D2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -260,8 +265,6 @@
 		CDF43DFB1DEE572000AD1CB9 /* bottom_tab2_unpre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_tab2_unpre@2x.png"; sourceTree = "<group>"; };
 		CDF43DFC1DEE572000AD1CB9 /* bottom_tab3_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_tab3_pre@2x.png"; sourceTree = "<group>"; };
 		CDF43DFD1DEE572000AD1CB9 /* bottom_tab3_unpre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom_tab3_unpre@2x.png"; sourceTree = "<group>"; };
-		CDF43E491DEE5DCD00AD1CB9 /* imageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageCell.h; sourceTree = "<group>"; };
-		CDF43E4A1DEE5DCD00AD1CB9 /* imageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageCell.m; sourceTree = "<group>"; };
 		CDF43E4C1DEE834C00AD1CB9 /* ClassficViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassficViewController.h; sourceTree = "<group>"; };
 		CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassficViewController.m; sourceTree = "<group>"; };
 		CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = classifyCell.m; sourceTree = "<group>"; };
@@ -506,6 +509,8 @@
 				CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */,
 				CDF43E5B1DEEC44000AD1CB9 /* ListViewController.h */,
 				CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */,
+				CD1430DD1DF0084100B9B74E /* MainVC.h */,
+				CD1430DC1DF0084100B9B74E /* MainVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -515,10 +520,10 @@
 			children = (
 				CD1430CB1DEFA90000B9B74E /* oneCell.h */,
 				CD1430CA1DEFA90000B9B74E /* oneCell.m */,
-				CDF43E491DEE5DCD00AD1CB9 /* imageCell.h */,
-				CDF43E4A1DEE5DCD00AD1CB9 /* imageCell.m */,
 				CDF43E501DEE9DFF00AD1CB9 /* classifyCell.h */,
 				CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */,
+				CD1430DA1DF007BB00B9B74E /* twoCell.h */,
+				CD1430D91DF007BB00B9B74E /* twoCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -985,14 +990,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF43E4B1DEE5DCD00AD1CB9 /* imageCell.m in Sources */,
 				CDDA4E891DED142700506B0A /* DownLoadVC.m in Sources */,
 				CDDA4E911DED1B2700506B0A /* BaseViewController.m in Sources */,
 				CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */,
+				CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */,
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,
 				CDDA4E8C1DED149C00506B0A /* NavigationVC.m in Sources */,
 				CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */,
 				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
+				CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */,
 				CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
 				CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */,

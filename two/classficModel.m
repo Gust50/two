@@ -19,3 +19,7 @@
 @implementation circleModel
 
 @end
+
+@implementation secondModel
+
+@end

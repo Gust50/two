@@ -10,10 +10,11 @@
 #import "ClassficViewController.h"
 #import "segementView.h"
 #import "DSCarouselView.h"
-#import "imageCell.h"
 #import "ListViewController.h"
 #import "classficModel.h"
-@interface LessonVC ()<segementViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ClassficViewControllerDelegate>
+#import "MainVC.h"
+@interface LessonVC ()<segementViewDelegate,ClassficViewControllerDelegate>
+
 {
     NSInteger _index;
     circleModel *_circleModel;
@@ -21,11 +22,11 @@
 @property(nonatomic,strong)segementView *segmentView;
 @property(nonatomic,strong)DSCarouselView *carouseView;
 @property(nonatomic,strong)NSMutableArray *imageArray;
-@property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)ClassficViewController *classficVC;
 @property(nonatomic,strong)ListViewController *listVC;
+@property(nonatomic,strong)MainVC *mainVC;
 @end
-static NSString *const cellID = @"cellID";
+
 @implementation LessonVC
 
 - (segementView *)segmentView{
@@ -46,23 +47,7 @@ static NSString *const cellID = @"cellID";
     }
     return _imageArray;
 }
-//- (DSCarouselView *)carouseView{
-//    if (!_carouseView) {
-//        _carouseView = [DSCarouselView carouseViewWithImageURLs:self.imageArray placeholder:nil];
-//    }
-//    return _carouseView;
-//}
-- (UICollectionView *)collectionView{
-    if (!_collectionView) {
-        UICollectionViewLayout *layout = [UICollectionViewLayout new];
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.backgroundColor = [UIColor whiteColor];
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-        //        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    }
-    return _collectionView;
-}
+
 - (ClassficViewController *)classficVC{
     if (!_classficVC) {
         _classficVC = [ClassficViewController new];
@@ -75,6 +60,12 @@ static NSString *const cellID = @"cellID";
         _listVC = [ListViewController new];
     }
     return _listVC;
+}
+- (MainVC *)mainVC{
+    if (!_mainVC) {
+        _mainVC = [MainVC new];
+    }
+    return _mainVC;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -89,13 +80,12 @@ static NSString *const cellID = @"cellID";
 - (void)initUI{
     [self loadNewData];
     [self.view addSubview:self.segmentView];
-//    [self.view addSubview:self.carouseView];
-    [self.view addSubview:self.collectionView];
+
     [self.view addSubview:self.classficVC.view];
-    
+    [self.view addSubview:self.mainVC.view];
+    self.mainVC.view.backgroundColor = [UIColor blueColor];
     [self updateViewConstraints];
-//    [_collectionView registerClass:[imageCell class] forCellWithReuseIdentifier:cellID];
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cellID];
+   
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -104,22 +94,12 @@ static NSString *const cellID = @"cellID";
         make.left.top.right.equalTo(weakSelf.view);
         make.height.equalTo(@45);
     }];
-//    [_carouseView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.equalTo(weakSelf.view);
-//        make.top.equalTo(_segmentView.mas_bottom);
-//        make.height.equalTo(@150);
-//    }];
-    [_collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view);
-        make.top.equalTo(@195);
-        make.height.equalTo(@100);
-        make.width.equalTo(@200);
-    }];
+
     if (_index == 0) {
        
         [_classficVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(weakSelf.view);
-            make.top.equalTo(_collectionView.mas_bottom);
+            make.top.equalTo(@295);
         }];
     }else{
     
@@ -128,47 +108,19 @@ static NSString *const cellID = @"cellID";
         make.top.equalTo(_segmentView.mas_bottom);
     }];
     }
+    [_mainVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(weakSelf.view);
+        make.height.equalTo(@100);
+        make.bottom.equalTo(_classficVC.view.mas_top);
+    }];
 }
-#pragma mark --- UICollectionViewDelegate ---
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 2;
-}
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    imageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    label.backgroundColor = [UIColor greenColor];
-    
-    [cell addSubview:label];
-//    cell.image = @"LaunchImageIPhone-700@2x";
-//    cell.backgroundColor = [UIColor blueColor];
-    return cell;
-}
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    //选择
-}
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(20, 20);
-}
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 3;
-}
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return 15;
-}
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0, 5, 0, 0);
-}
+
 -(void)loadNewData{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self getRecommendData];
     });
 }
 - (void)getRecommendData{
-    NSLog(@"正则2");
     [[NetworkSingleton sharedManager] getRecommendCourseResult:nil url:RecommentedUrl successBlock:^(id responseBody) {
         NSMutableArray *focusArray = [responseBody objectForKey:@"FocusList"];
         NSLog(@"数组%@",focusArray);
@@ -197,12 +149,13 @@ static NSString *const cellID = @"cellID";
     [self updateViewConstraints];
     _classficVC.index = _index;
     if (currentIndex.selectedSegmentIndex == 0) {
-       
+        self.mainVC.view.hidden = NO;
         self.carouseView.hidden = NO;
     }
     else{
         
         self.carouseView.hidden = YES;
+        self.mainVC.view.hidden = YES;
     }
 }
 #pragma mark --- ClassficViewDelegate ---

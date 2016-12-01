@@ -130,20 +130,11 @@ static NSString *const oneID = @"oneID";
     });
 }
 - (void)getRecommendData{
-     NSLog(@"正则2");
     [[NetworkSingleton sharedManager] getRecommendCourseResult:nil url:RecommentedUrl successBlock:^(id responseBody) {
         _listArray = [responseBody objectForKey:@"CourseList"];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
-       
-//        NSMutableArray *courseArray = [responseBody objectForKey:@"CourseList"];
-//        NSMutableArray *albumArray = [responseBody objectForKey:@"AlbumList"];
-//        for (int i = 0; i < focusArray.count; ++i) {
-//            _listModel = [listModel mj_objectWithKeyValues:focusArray[i]];
-//            [_listArray addObject:_listModel];
-//            
-//        }
     } failureBlock:^(NSString *error) {
         [SVProgressHUD showErrorWithStatus:error];
     }];

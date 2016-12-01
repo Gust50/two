@@ -22,3 +22,7 @@
 @interface circleModel : NSObject
 @property(nonatomic,strong)NSString *PhotoURL;
 @end
+
+@interface secondModel : NSObject
+@property(nonatomic,strong)NSString *PhotoURL;
+@end
