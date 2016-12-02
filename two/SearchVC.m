@@ -17,6 +17,16 @@
 @property(nonatomic,strong)UIView *backgroundView;
 @property(nonatomic,strong)UIImageView *imageView;
 @property(nonatomic,strong)UILabel *NullLabel;
+
+////包含头文件
+////文字转语音
+//#import "iflyMSC/IFlySpeechConstant.h"
+//#import "iflyMSC/IFlySpeechSynthesizer.h"
+//#import "iflyMSC/IFlySpeechSynthesizerDelegate.h"
+//
+////语音转文字
+//#import "iflyMSC/IFlySpeechRecognizer.h"
+//#import "iflyMSC/IFlySpeechRecognizerDelegate.h"
 @end
 
 @implementation SearchVC
@@ -60,7 +70,7 @@
 - (UITextField *)searchField{
     if (!_searchField) {
         _searchField = [UITextField new];
-        _searchField.placeholder = @"请‘“尝试语音输入课程”";
+        _searchField.placeholder = @"请“尝试语音输入课程”";
         _searchField.backgroundColor = RGB(200, 200, 200);
         _searchField.layer.cornerRadius = 10;
         _searchField.leftView = self.leftView;

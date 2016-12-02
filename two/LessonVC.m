@@ -38,15 +38,6 @@
     }
     return _segmentView;
 }
-- (NSMutableArray *)imageArray{
-    if (!_imageArray) {
-//        _imageArray = @[@"http://pub.chinaunix.net/uploadfile/201204/20120422080605427.jpg",
-//          @"http://imgsrc.baidu.com/forum/w%3D580/sign=0c1b13ef0c3387449cc52f74610ed937/bf94b9315c6034a8a4e0f53ecb13495408237644.jpg",
-//          @"http://hiphotos.baidu.com/%95%D7%D4%AA%B5%C0/pic/item/432e6436d9cd9b4deac4af86.jpg"];
-        _imageArray = [NSMutableArray array];
-    }
-    return _imageArray;
-}
 
 - (ClassficViewController *)classficVC{
     if (!_classficVC) {
@@ -67,6 +58,12 @@
     }
     return _mainVC;
 }
+- (DSCarouselView *)carouseView{
+    if (!_carouseView) {
+        _carouseView = [DSCarouselView carouseViewWithImageURLs:self.imageArray placeholder:nil];
+    }
+    return _carouseView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _index = 0;
@@ -80,7 +77,6 @@
 - (void)initUI{
     [self loadNewData];
     [self.view addSubview:self.segmentView];
-
     [self.view addSubview:self.classficVC.view];
     [self.view addSubview:self.mainVC.view];
     self.mainVC.view.backgroundColor = [UIColor blueColor];
@@ -99,7 +95,7 @@
        
         [_classficVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(weakSelf.view);
-            make.top.equalTo(@295);
+            make.top.equalTo(@300);
         }];
     }else{
     
@@ -113,6 +109,11 @@
         make.height.equalTo(@100);
         make.bottom.equalTo(_classficVC.view.mas_top);
     }];
+    [_carouseView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(weakSelf.view);
+        make.top.equalTo(_segmentView.mas_bottom);
+        make.bottom.equalTo(_mainVC.view.mas_top).offset(-5);
+    }];
 }
 
 -(void)loadNewData{
@@ -123,23 +124,17 @@
 - (void)getRecommendData{
     [[NetworkSingleton sharedManager] getRecommendCourseResult:nil url:RecommentedUrl successBlock:^(id responseBody) {
         NSMutableArray *focusArray = [responseBody objectForKey:@"FocusList"];
-        NSLog(@"数组%@",focusArray);
         NSMutableArray  *array = [NSMutableArray array];
         for (NSDictionary *d in focusArray) {
             _circleModel = [circleModel mj_objectWithKeyValues:d];
             [array addObject:_circleModel.PhotoURL];
         }
-     self.imageArray = array;
-        NSLog(@"图片%@",array);
+         self.imageArray  = [NSMutableArray arrayWithArray:array] ;
+         [self.view addSubview:self.carouseView];
+        [self updateViewConstraints];
     } failureBlock:^(NSString *error) {
         [SVProgressHUD showErrorWithStatus:error];
     }];
-   
-    _carouseView = [[DSCarouselView alloc] initWithFrame:CGRectMake(0, 45, self.view.width, 150)];
-    _carouseView.backgroundColor = [UIColor blueColor];
-    _carouseView = [DSCarouselView carouseViewWithImageURLs:self.imageArray placeholder:nil];
-  
-    [self.view addSubview:self.carouseView];
    
 }
 
