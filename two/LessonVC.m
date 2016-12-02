@@ -10,7 +10,6 @@
 #import "ClassficViewController.h"
 #import "segementView.h"
 #import "DSCarouselView.h"
-#import "ListViewController.h"
 #import "classficModel.h"
 #import "MainVC.h"
 @interface LessonVC ()<segementViewDelegate,ClassficViewControllerDelegate>
@@ -23,7 +22,6 @@
 @property(nonatomic,strong)DSCarouselView *carouseView;
 @property(nonatomic,strong)NSMutableArray *imageArray;
 @property(nonatomic,strong)ClassficViewController *classficVC;
-@property(nonatomic,strong)ListViewController *listVC;
 @property(nonatomic,strong)MainVC *mainVC;
 @end
 
@@ -46,12 +44,7 @@
     }
     return _classficVC;
 }
-- (ListViewController *)listVC{
-    if (!_listVC) {
-        _listVC = [ListViewController new];
-    }
-    return _listVC;
-}
+
 - (MainVC *)mainVC{
     if (!_mainVC) {
         _mainVC = [MainVC new];
@@ -154,9 +147,9 @@
     }
 }
 #pragma mark --- ClassficViewDelegate ---
-- (void)pushList{
+- (void)pushList:(UIViewController *)controller{
     self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:self.listVC animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
 @end

@@ -9,7 +9,7 @@
 #import "ClassficViewController.h"
 #import "classifyCell.h"
 #import "classficModel.h"
-
+#import "ListViewController.h"
 #import "oneCell.h"
 
 @interface ClassficViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -20,7 +20,8 @@
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray *array;
 @property(nonatomic,strong)NSMutableArray *listArray;
-
+@property(nonatomic,strong)ListViewController *listVC;
+@property(nonatomic,strong)NSMutableArray *plistArray;
 @end
 static NSString *const cellID = @"cellID";
 static NSString *const oneID = @"oneID";
@@ -43,13 +44,23 @@ static NSString *const oneID = @"oneID";
 }
 - (NSMutableArray *)listArray{
     if (!_listArray) {
-//        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"iCategoryList.plist" ofType:nil];
-//        _listArray = [[NSArray alloc] initWithContentsOfFile:plistPath];
         _listArray = [NSMutableArray array];
     }
     return _listArray;
 }
-
+- (ListViewController *)listVC{
+    if (!_listVC) {
+        _listVC = [ListViewController new];
+    }
+    return _listVC;
+}
+- (NSMutableArray *)plistArray{
+    if (!_plistArray) {
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"iCategoryList.plist" ofType:nil];
+                _plistArray = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+    }
+    return _plistArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _index = 0;
@@ -111,12 +122,22 @@ static NSString *const oneID = @"oneID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //     NSDictionary *listDic = _listArray[indexPath.row-1];
 //    listModel *listModel = [classficModel mj_objectWithKeyValues:listDic];
-    [self pushList];
+    if (indexPath.row == 0) {
+        self.listVC.cateType = @"zhibo";
+    }else{
+        NSDictionary *dic = _plistArray[indexPath.row -1];
+        self.listVC.cateType = @"feizhibo";
+        self.listVC.cateNameArray = [dic objectForKey:@"categoryName"];
+        self.listVC.cateIDArray = [dic objectForKey:@"categoryID"];
+
+    }
+    
+    [self pushList:self.listVC];
    
 }
-- (void)pushList{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(pushList)]) {
-        [self.delegate pushList];
+- (void)pushList:(UIViewController *)controller{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pushList:)]) {
+        [self.delegate pushList:controller];
     }
 }
 -(void)setIndex:(NSInteger)index{

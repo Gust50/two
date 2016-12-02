@@ -115,6 +115,7 @@
 		CDF43E571DEEAB7700AD1CB9 /* iCategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF43E561DEEAB7700AD1CB9 /* iCategoryList.plist */; };
 		CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E591DEEB2B700AD1CB9 /* classficModel.m */; };
 		CDF43E5D1DEEC44000AD1CB9 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */; };
+		CDF69B301DF1290D00AC5386 /* listViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF69B2F1DF1290D00AC5386 /* listViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,6 +277,8 @@
 		CDF43E591DEEB2B700AD1CB9 /* classficModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = classficModel.m; sourceTree = "<group>"; };
 		CDF43E5B1DEEC44000AD1CB9 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		CDF69B2E1DF1290D00AC5386 /* listViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listViewCell.h; sourceTree = "<group>"; };
+		CDF69B2F1DF1290D00AC5386 /* listViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,6 +527,8 @@
 				CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */,
 				CD1430DA1DF007BB00B9B74E /* twoCell.h */,
 				CD1430D91DF007BB00B9B74E /* twoCell.m */,
+				CDF69B2E1DF1290D00AC5386 /* listViewCell.h */,
+				CDF69B2F1DF1290D00AC5386 /* listViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -990,6 +995,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF69B301DF1290D00AC5386 /* listViewCell.m in Sources */,
 				CDDA4E891DED142700506B0A /* DownLoadVC.m in Sources */,
 				CDDA4E911DED1B2700506B0A /* BaseViewController.m in Sources */,
 				CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */,

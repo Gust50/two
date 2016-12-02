@@ -23,3 +23,7 @@
 @implementation secondModel
 
 @end
+
+@implementation courceModel
+
+@end

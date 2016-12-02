@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol ClassficViewControllerDelegate<NSObject>
-- (void)pushList;
+- (void)pushList:(UIViewController *)controller;
 @end
 @interface ClassficViewController : BaseViewController
 @property(nonatomic,assign)NSInteger index;

@@ -26,3 +26,10 @@
 @interface secondModel : NSObject
 @property(nonatomic,strong)NSString *PhotoURL;
 @end
+
+@interface courceModel : NSObject
+@property(nonatomic,strong)NSString *PhotoURL;
+@property(nonatomic,strong)NSString *CourseName;
+@property(nonatomic,strong)NSString *ClassNumber;
+@property(nonatomic,strong)NSString *SchoolName;
+@end
