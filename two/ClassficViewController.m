@@ -11,7 +11,7 @@
 #import "classficModel.h"
 #import "ListViewController.h"
 #import "oneCell.h"
-
+#import "FirstDetailViewController.h"
 @interface ClassficViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     classficModel *classModel;
@@ -22,6 +22,7 @@
 @property(nonatomic,strong)NSMutableArray *listArray;
 @property(nonatomic,strong)ListViewController *listVC;
 @property(nonatomic,strong)NSMutableArray *plistArray;
+@property(nonatomic,strong)FirstDetailViewController *firstDetailVC;
 @end
 static NSString *const cellID = @"cellID";
 static NSString *const oneID = @"oneID";
@@ -58,8 +59,15 @@ static NSString *const oneID = @"oneID";
     if (!_plistArray) {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"iCategoryList.plist" ofType:nil];
                 _plistArray = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+        NSLog(@"霹雳手的个数%ld",_plistArray.count);
     }
     return _plistArray;
+}
+- (FirstDetailViewController *)firstDetailVC{
+    if (!_firstDetailVC) {
+        _firstDetailVC = [FirstDetailViewController new];
+    }
+    return _firstDetailVC;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -120,20 +128,24 @@ static NSString *const oneID = @"oneID";
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//     NSDictionary *listDic = _listArray[indexPath.row-1];
-//    listModel *listModel = [classficModel mj_objectWithKeyValues:listDic];
-    if (indexPath.row == 0) {
+    if (_index == 0) {
+        [self pushList:self.firstDetailVC];
+    }
+    else{
+        if (indexPath.row == 0)
+         {
         self.listVC.cateType = @"zhibo";
-    }else{
+         }
+      else
+         {
         NSDictionary *dic = _plistArray[indexPath.row -1];
         self.listVC.cateType = @"feizhibo";
         self.listVC.cateNameArray = [dic objectForKey:@"categoryName"];
         self.listVC.cateIDArray = [dic objectForKey:@"categoryID"];
-
+             NSLog(@"这个的个数%@",_plistArray);
+         }
+        [self pushList:self.listVC];
     }
-    
-    [self pushList:self.listVC];
-   
 }
 - (void)pushList:(UIViewController *)controller{
     if (self.delegate && [self.delegate respondsToSelector:@selector(pushList:)]) {

@@ -12,6 +12,7 @@
 		CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */; };
 		CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D91DF007BB00B9B74E /* twoCell.m */; };
 		CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430DC1DF0084100B9B74E /* MainVC.m */; };
+		CD2B9A801DF4F612001EAB3F /* FirstDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
 		CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A41DEC39C00078D2FF /* ViewController.m */; };
@@ -148,6 +149,8 @@
 		CD1430DA1DF007BB00B9B74E /* twoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoCell.h; sourceTree = "<group>"; };
 		CD1430DC1DF0084100B9B74E /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		CD1430DD1DF0084100B9B74E /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		CD2B9A7E1DF4F612001EAB3F /* FirstDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstDetailViewController.h; sourceTree = "<group>"; };
+		CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstDetailViewController.m; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA8949E1DEC39C00078D2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA894A01DEC39C00078D2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -514,6 +517,8 @@
 				CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */,
 				CD1430DD1DF0084100B9B74E /* MainVC.h */,
 				CD1430DC1DF0084100B9B74E /* MainVC.m */,
+				CD2B9A7E1DF4F612001EAB3F /* FirstDetailViewController.h */,
+				CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -998,6 +1003,7 @@
 				CDF69B301DF1290D00AC5386 /* listViewCell.m in Sources */,
 				CDDA4E891DED142700506B0A /* DownLoadVC.m in Sources */,
 				CDDA4E911DED1B2700506B0A /* BaseViewController.m in Sources */,
+				CD2B9A801DF4F612001EAB3F /* FirstDetailViewController.m in Sources */,
 				CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */,
 				CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */,
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,

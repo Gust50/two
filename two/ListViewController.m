@@ -15,13 +15,15 @@
     NSInteger _page;///页数
     NSInteger _limit;///每页个数
     NSInteger _charge;///免费 收费
-    NSString *_cateied;///课程分类
+    NSString *_cateid;///课程分类
     NSInteger _index;
 }
 @property(nonatomic,strong)NSArray *array;
 @property(nonatomic,strong)UISegmentedControl *segmentControl;
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataSourceArray;
+@property(nonatomic,strong)UIScrollView *scrollView;
+@property(nonatomic,strong)UIView *lineView;
 @end
 static NSString *const cellID = @"cellID";
 @implementation ListViewController
@@ -72,15 +74,35 @@ static NSString *const cellID = @"cellID";
     }
     return _dataSourceArray;
 }
+- (UIScrollView *)scrollView{
+    if (!_scrollView) {
+        _scrollView = [UIScrollView new];
+        _scrollView.pagingEnabled = YES;
+        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.backgroundColor = RGB(246, 246, 246);
+        _scrollView.alwaysBounceHorizontal = YES;
+        self.scrollView.contentSize = CGSizeMake(self.cateNameArray.count*60, 0);
+    }
+    return _scrollView;
+}
+- (UIView *)lineView{
+    if (!_lineView) {
+        _lineView = [UIView new];
+        _lineView.backgroundColor = navigationBarColor;
+    }
+    return _lineView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _courceModel = [courceModel new];
+    NSLog(@"数组数量%ld",self.cateNameArray.count);
     _page = 1;
     _limit = 20;
     _charge = 1;
     _index = 0;
     if ([self.cateType isEqualToString:@"feizhibo"]) {
-        _cateied = self.cateIDArray[0];
+        _cateid = self.cateIDArray[0];
     }
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.titleView = self.segmentControl;
@@ -88,17 +110,66 @@ static NSString *const cellID = @"cellID";
 }
 - (void)initUI{
     [self loadData];
+    if (![self.cateType isEqualToString:@"zhibo"]) {
+        NSLog(@"按钮的标题名。。。。。。");
+        [self.view addSubview:self.scrollView];
+        [self createBtn];
+    }
     [self.view addSubview:self.tableView];
     [self updateViewConstraints];
     [_tableView registerClass:[listViewCell class] forCellReuseIdentifier:cellID];
 }
+- (void)createBtn{
+    NSLog(@"按钮的标题名434");
+    for (int i = 0; i< self.cateNameArray.count; i ++) {
+        NSLog(@"按钮的标题名22");
+        UIButton *nameBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        nameBtn.frame = CGRectMake(60*i, 0, 60, 40);
+        nameBtn.tag = 10 + i;
+        nameBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [nameBtn setTitle:self.cateNameArray[i] forState:UIControlStateNormal];
+        NSLog(@"按钮的标题名：%@",self.cateNameArray[i]);
+        [nameBtn setTitleColor:navigationBarColor forState:UIControlStateSelected];
+        [nameBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [nameBtn addTarget:self action:@selector(nameBtnAC:) forControlEvents:UIControlEventTouchUpInside];
+        [self.scrollView addSubview:nameBtn];
+        if (i == 0) {
+            [self.scrollView addSubview:self.lineView];
+        }
+    }
+    
+}
+- (void)nameBtnAC:(UIButton *)sender{
+    NSInteger index = sender.tag - 10;
+    if (index == _index) {
+        return;
+    }
+    _index = index;
+    _cateid = _cateIDArray[index];
+    _page = 1;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.lineView.center = CGPointMake(sender.center.x, 39);
+    }];
+    [self.tableView reloadData];
+}
 - (void)updateViewConstraints{
     [super updateViewConstraints];
     WS(weakSelf);
-    [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.equalTo(weakSelf.view);
+    [_scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(weakSelf.view);
+        make.height.equalTo(@40);
     }];
- 
+    if ([self.cateType isEqualToString:@"zhibo"]) {
+        [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.bottom.equalTo(weakSelf.view);
+        }];
+    }else{
+        [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(weakSelf.view);
+            make.top.equalTo(@40);
+        }];
+    }
+    
 }
 #pragma mark --- UITableViewDelegate ---
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -130,7 +201,7 @@ static NSString *const cellID = @"cellID";
     if ([self.cateType isEqualToString:@"zhibo"]) {
        url = [NSString stringWithFormat:@"http://pop.client.chuanke.com/?mod=search&act=mobile&from=iPhone&page=%ld&limit=%ld&today=1&charge=%ld",_page,_limit,_charge];
     }else{
-        url = [NSString stringWithFormat:@"http://pop.client.chuanke.com/?mod=search&act=mobile&from=iPhone&page=%ld&limit=%ld&cateid=%@&charge=%ld",_page,_limit,_cateied,_charge];
+        url = [NSString stringWithFormat:@"http://pop.client.chuanke.com/?mod=search&act=mobile&from=iPhone&page=%ld&limit=%ld&cateid=%@&charge=%ld",_page,_limit,_cateid,_charge];
     }
     
     [[NetworkSingleton sharedManager] getDataResult:nil url:url successBlock:^(id responseBody) {
