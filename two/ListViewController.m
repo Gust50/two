@@ -20,10 +20,11 @@
 }
 @property(nonatomic,strong)NSArray *array;
 @property(nonatomic,strong)UISegmentedControl *segmentControl;
-@property(nonatomic,strong)UITableView *tableView;
+
 @property(nonatomic,strong)NSMutableArray *dataSourceArray;
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,strong)UIView *lineView;
+@property(nonatomic,strong)UITableView *tableView;
 @end
 static NSString *const cellID = @"cellID";
 @implementation ListViewController
@@ -58,6 +59,7 @@ static NSString *const cellID = @"cellID";
         _page = 1;
         _charge = 2;
     }
+    [self loadData];
     [self.tableView reloadData];
 }
 - (UITableView *)tableView{
@@ -96,7 +98,6 @@ static NSString *const cellID = @"cellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     _courceModel = [courceModel new];
-    NSLog(@"数组数量%ld",self.cateNameArray.count);
     _page = 1;
     _limit = 20;
     _charge = 1;
@@ -111,7 +112,6 @@ static NSString *const cellID = @"cellID";
 - (void)initUI{
     [self loadData];
     if (![self.cateType isEqualToString:@"zhibo"]) {
-        NSLog(@"按钮的标题名。。。。。。");
         [self.view addSubview:self.scrollView];
         [self createBtn];
     }
@@ -120,22 +120,21 @@ static NSString *const cellID = @"cellID";
     [_tableView registerClass:[listViewCell class] forCellReuseIdentifier:cellID];
 }
 - (void)createBtn{
-    NSLog(@"按钮的标题名434");
     for (int i = 0; i< self.cateNameArray.count; i ++) {
-        NSLog(@"按钮的标题名22");
         UIButton *nameBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         nameBtn.frame = CGRectMake(60*i, 0, 60, 40);
         nameBtn.tag = 10 + i;
         nameBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [nameBtn setTitle:self.cateNameArray[i] forState:UIControlStateNormal];
-        NSLog(@"按钮的标题名：%@",self.cateNameArray[i]);
         [nameBtn setTitleColor:navigationBarColor forState:UIControlStateSelected];
         [nameBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [nameBtn addTarget:self action:@selector(nameBtnAC:) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:nameBtn];
-        if (i == 0) {
+        if ([self.cateType isEqualToString:@"feizhibo"]) {
+           if (i == 0) {
             [self.scrollView addSubview:self.lineView];
-        }
+                  }
+            }
     }
     
 }
@@ -150,7 +149,8 @@ static NSString *const cellID = @"cellID";
     [UIView animateWithDuration:0.5 animations:^{
         self.lineView.center = CGPointMake(sender.center.x, 39);
     }];
-    [self.tableView reloadData];
+    [self loadData];
+
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -173,7 +173,6 @@ static NSString *const cellID = @"cellID";
 }
 #pragma mark --- UITableViewDelegate ---
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"数量%ld",self.dataSourceArray.count);
     return self.dataSourceArray.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -181,7 +180,7 @@ static NSString *const cellID = @"cellID";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     listViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    NSDictionary *dic = _dataSourceArray[indexPath.row];
+    NSDictionary *dic = self.dataSourceArray[indexPath.row];
     _courceModel = [courceModel mj_objectWithKeyValues:dic];
     cell.model = _courceModel;
     return cell;
@@ -205,16 +204,15 @@ static NSString *const cellID = @"cellID";
     }
     
     [[NetworkSingleton sharedManager] getDataResult:nil url:url successBlock:^(id responseBody) {
-        if (_page == 1) {
-            [_dataSourceArray removeAllObjects];
-        }
+//        if (_page == 1) {
+//            [_dataSourceArray removeAllObjects];
+//        }
         _dataSourceArray = [responseBody objectForKey:@"ClassList"];
-        NSLog(@"数据%@",_dataSourceArray);
-        //dispatch_sync(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
-//        });
     } failureBlock:^(NSString *error) {
         
     }];
+    
 }
+
 @end

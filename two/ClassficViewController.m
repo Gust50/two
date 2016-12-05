@@ -49,17 +49,16 @@ static NSString *const oneID = @"oneID";
     }
     return _listArray;
 }
-- (ListViewController *)listVC{
-    if (!_listVC) {
-        _listVC = [ListViewController new];
-    }
-    return _listVC;
-}
+//- (ListViewController *)listVC{
+//    if (!_listVC) {
+//        _listVC = [ListViewController new];
+//    }
+//    return _listVC;
+//}
 - (NSMutableArray *)plistArray{
     if (!_plistArray) {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"iCategoryList.plist" ofType:nil];
                 _plistArray = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
-        NSLog(@"霹雳手的个数%ld",_plistArray.count);
     }
     return _plistArray;
 }
@@ -132,19 +131,22 @@ static NSString *const oneID = @"oneID";
         [self pushList:self.firstDetailVC];
     }
     else{
+        ListViewController *listVC = [ListViewController new];
         if (indexPath.row == 0)
          {
-        self.listVC.cateType = @"zhibo";
+        listVC.cateType = @"zhibo";
          }
       else
          {
-        NSDictionary *dic = _plistArray[indexPath.row -1];
-        self.listVC.cateType = @"feizhibo";
-        self.listVC.cateNameArray = [dic objectForKey:@"categoryName"];
-        self.listVC.cateIDArray = [dic objectForKey:@"categoryID"];
-             NSLog(@"这个的个数%@",_plistArray);
+        NSDictionary *dic = self.plistArray[indexPath.row -1];
+        listVC.cateType = @"feizhibo";
+        listVC.cateNameArray = [dic objectForKey:@"categoryName"];
+        listVC.cateIDArray = [dic objectForKey:@"categoryID"];
+        
          }
-        [self pushList:self.listVC];
+        
+        [self pushList:listVC];
+
     }
 }
 - (void)pushList:(UIViewController *)controller{
