@@ -8,11 +8,11 @@
 
 #import "FirstDetailViewController.h"
 
-@interface FirstDetailViewController ()
+@interface FirstDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NSMutableArray *dataSourceArray;
 @property(nonatomic,assign)BOOL isSelectedItem;
 @end
-
+static NSString *const cellID = @"cellID";
 @implementation FirstDetailViewController
 - (NSMutableArray *)dataSourceArray{
     if (!_dataSourceArray) {
@@ -23,6 +23,7 @@
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [UITableView new];
+        _tableView.delegate = self;
     }
     return _tableView;
 }
@@ -45,6 +46,7 @@
 - (void)initUI{
     [self.view addSubview:self.tableView];
     [self updateViewConstraints];
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -53,5 +55,14 @@
         make.left.right.bottom.equalTo(weakSelf.view);
         make.top.equalTo(@0);
     }];
+}
+#pragma mark --- UITableViewDelegate ---
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataSourceArray.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath]
+    ;
+    return cell;
 }
 @end

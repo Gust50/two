@@ -13,6 +13,7 @@
 		CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D91DF007BB00B9B74E /* twoCell.m */; };
 		CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430DC1DF0084100B9B74E /* MainVC.m */; };
 		CD2B9A801DF4F612001EAB3F /* FirstDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */; };
+		CD2B9A831DF572B6001EAB3F /* firstDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
 		CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A41DEC39C00078D2FF /* ViewController.m */; };
@@ -151,6 +152,8 @@
 		CD1430DD1DF0084100B9B74E /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		CD2B9A7E1DF4F612001EAB3F /* FirstDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstDetailViewController.h; sourceTree = "<group>"; };
 		CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstDetailViewController.m; sourceTree = "<group>"; };
+		CD2B9A811DF572B6001EAB3F /* firstDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstDetailCell.h; sourceTree = "<group>"; };
+		CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstDetailCell.m; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA8949E1DEC39C00078D2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA894A01DEC39C00078D2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -534,6 +537,8 @@
 				CD1430D91DF007BB00B9B74E /* twoCell.m */,
 				CDF69B2E1DF1290D00AC5386 /* listViewCell.h */,
 				CDF69B2F1DF1290D00AC5386 /* listViewCell.m */,
+				CD2B9A811DF572B6001EAB3F /* firstDetailCell.h */,
+				CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1011,6 +1016,7 @@
 				CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */,
 				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
 				CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */,
+				CD2B9A831DF572B6001EAB3F /* firstDetailCell.m in Sources */,
 				CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
 				CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */,
