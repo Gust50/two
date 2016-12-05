@@ -128,6 +128,12 @@ static NSString *const oneID = @"oneID";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_index == 0) {
+        NSDictionary *dataDic = _listArray[indexPath.row];
+       courceModel *_courceModel  = [courceModel mj_objectWithKeyValues:dataDic];
+        
+//        courceModel *_courceModel = _listArray[indexPath.row -2];
+        self.firstDetailVC.SID = _courceModel.SID;
+        self.firstDetailVC.courseId = _courceModel.CourseID;
         [self pushList:self.firstDetailVC];
     }
     else{

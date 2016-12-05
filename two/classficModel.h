@@ -32,4 +32,6 @@
 @property(nonatomic,strong)NSString *CourseName;
 @property(nonatomic,strong)NSString *ClassNumber;
 @property(nonatomic,strong)NSString *SchoolName;
+@property(nonatomic,strong)NSString *CourseID;
+@property(nonatomic,strong)NSString *SID;
 @end

@@ -9,6 +9,7 @@
 #import "ListViewController.h"
 #import "listViewCell.h"
 #import "classficModel.h"
+#import <MJRefresh.h>
 @interface ListViewController ()<UITableViewDelegate,UITableViewDataSource>{
     courceModel *_courceModel;
     NSInteger _type;///segmemt
@@ -59,7 +60,7 @@ static NSString *const cellID = @"cellID";
         _page = 1;
         _charge = 2;
     }
-    [self loadData];
+    [self loadNewData];
     [self.tableView reloadData];
 }
 - (UITableView *)tableView{
@@ -67,6 +68,12 @@ static NSString *const cellID = @"cellID";
         _tableView = [UITableView new];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                [self loadNewData];
+        }];
+        _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            [self loadMoreData];
+        }];
     }
     return _tableView;
 }
@@ -110,15 +117,17 @@ static NSString *const cellID = @"cellID";
     [self initUI];
 }
 - (void)initUI{
-    [self loadData];
+    [self loadNewData];
     if (![self.cateType isEqualToString:@"zhibo"]) {
         [self.view addSubview:self.scrollView];
         [self createBtn];
     }
     [self.view addSubview:self.tableView];
+//    [self loadData];
     [self updateViewConstraints];
     [_tableView registerClass:[listViewCell class] forCellReuseIdentifier:cellID];
 }
+
 - (void)createBtn{
     for (int i = 0; i< self.cateNameArray.count; i ++) {
         UIButton *nameBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -149,7 +158,7 @@ static NSString *const cellID = @"cellID";
     [UIView animateWithDuration:0.5 animations:^{
         self.lineView.center = CGPointMake(sender.center.x, 39);
     }];
-    [self loadData];
+    [self loadNewData];
 
 }
 - (void)updateViewConstraints{
@@ -190,10 +199,25 @@ static NSString *const cellID = @"cellID";
 }
 
 #pragma mark --- 解析 ---
-- (void)loadData{
+- (void)loadNewData{
+    _page = 1;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
            [self getRequestData];
         });
+    [self performSelector:@selector(endHeaderFreshing) withObject:nil afterDelay:0.5];
+}
+- (void)endHeaderFreshing{
+     [self.tableView.mj_header endRefreshing];
+}
+- (void)loadMoreData{
+    _page++;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getRequestData];
+    });
+    [self performSelector:@selector(endFooterFreshing) withObject:nil afterDelay:0.5];
+}
+- (void)endFooterFreshing{
+     [self.tableView.mj_footer endRefreshing];
 }
 - (void)getRequestData{
     NSString *url;

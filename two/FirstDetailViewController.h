@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstDetailViewController : BaseViewController
-
+@property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)NSString *SID;
+@property(nonatomic,strong)NSString *courseId;
 @end
