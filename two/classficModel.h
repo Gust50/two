@@ -38,6 +38,15 @@
 
 @interface classListModel : NSObject
 @property(nonatomic,strong)NSString *ClassName;
-@property(nonatomic,strong)NSString *index;
+@property(nonatomic,strong)NSString *ClassIndex;
 @property(nonatomic,strong)NSString *VideoTimeLength;
+
+@end
+
+@interface ClassList : NSObject
+@property(nonatomic,strong)NSMutableArray *ClassList;
+@end
+
+@interface StepList : NSObject
+@property(nonatomic,strong)NSMutableArray *StepList;
 @end

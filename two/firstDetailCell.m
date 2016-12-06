@@ -103,7 +103,7 @@
     }];
 }
 - (void)setModel:(classListModel *)model{
-    _nameLabel.text = [NSString stringWithFormat:@"第%@节:%@",model.index,model.ClassName];
+    _nameLabel.text = [NSString stringWithFormat:@"第%@节:%@",model.ClassIndex,model.ClassName];
     _subLabel.text = [NSString stringWithFormat:@"课程时长:%ld分钟",[model.VideoTimeLength integerValue]/60];
 }
 @end

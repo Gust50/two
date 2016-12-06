@@ -31,3 +31,15 @@
 @implementation classListModel
 
 @end
+
+@implementation ClassList
++(NSDictionary *)mj_objectClassInArray{
+    return @{@"ClassList":@"classListModel"};
+}
+@end
+
+@implementation StepList
++(NSDictionary *)mj_objectClassInArray{
+    return @{@"StepList":@"ClassList"};
+}
+@end

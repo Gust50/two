@@ -22,7 +22,7 @@
 @property(nonatomic,strong)NSMutableArray *listArray;
 @property(nonatomic,strong)ListViewController *listVC;
 @property(nonatomic,strong)NSMutableArray *plistArray;
-@property(nonatomic,strong)FirstDetailViewController *firstDetailVC;
+//@property(nonatomic,strong)FirstDetailViewController *firstDetailVC;
 @end
 static NSString *const cellID = @"cellID";
 static NSString *const oneID = @"oneID";
@@ -62,12 +62,12 @@ static NSString *const oneID = @"oneID";
     }
     return _plistArray;
 }
-- (FirstDetailViewController *)firstDetailVC{
-    if (!_firstDetailVC) {
-        _firstDetailVC = [FirstDetailViewController new];
-    }
-    return _firstDetailVC;
-}
+//- (FirstDetailViewController *)firstDetailVC{
+//    if (!_firstDetailVC) {
+//        _firstDetailVC = [FirstDetailViewController new];
+//    }
+//    return _firstDetailVC;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _index = 0;
@@ -128,13 +128,13 @@ static NSString *const oneID = @"oneID";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_index == 0) {
+        FirstDetailViewController *firstDetailVC = [FirstDetailViewController new];
         NSDictionary *dataDic = _listArray[indexPath.row];
        courceModel *_courceModel  = [courceModel mj_objectWithKeyValues:dataDic];
-        
 //        courceModel *_courceModel = _listArray[indexPath.row -2];
-        self.firstDetailVC.SID = _courceModel.SID;
-        self.firstDetailVC.courseId = _courceModel.CourseID;
-        [self pushList:self.firstDetailVC];
+        firstDetailVC.SID = _courceModel.SID;
+        firstDetailVC.courseId = _courceModel.CourseID;
+        [self pushList:firstDetailVC];
     }
     else{
         ListViewController *listVC = [ListViewController new];

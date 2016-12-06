@@ -21,8 +21,7 @@ static NSString *const cellID = @"cellID";
 @implementation FirstDetailViewController
 - (NSMutableArray *)dataSourceArray{
     if (!_dataSourceArray) {
-//        _dataSourceArray = [NSMutableArray array];
-        _dataSourceArray = [NSMutableArray arrayWithObjects:@"12",@"34", nil];
+        _dataSourceArray = [NSMutableArray array];
     }
     return _dataSourceArray;
 }
@@ -49,6 +48,7 @@ static NSString *const cellID = @"cellID";
     self.title = @"课程详情";
     [self rightImage:@"course_info_bg_collect@2x" push:nil];
     [self.navigationItem.rightBarButtonItem setAction:@selector(rightItemAC)];
+    [self loadNewData];
     [self initUI];
 }
 - (void)rightItemAC{
@@ -74,8 +74,9 @@ static NSString *const cellID = @"cellID";
 }
 #pragma mark --- UITableViewDelegate ---
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.dataSourceArray.count;
-    return 15;
+    return self.dataSourceArray.count;
+//    return 15;
+
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60;
@@ -83,8 +84,13 @@ static NSString *const cellID = @"cellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     firstDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath]
     ;
+//    NSDictionary *d = self.dataSourceArray[indexPath.row];
+//    _classListModel = [classListModel mj_objectWithKeyValues:d];
 //    _classListModel = _dataSourceArray[indexPath.row];
-//    cell.model = _classListModel;
+    
+    classListModel *model = _dataSourceArray[indexPath.row];
+NSLog(@".............................................................................................%@",model.ClassName);
+    cell.model = model;
     return cell;
 }
 #pragma mark --- 解析 ---
@@ -111,7 +117,21 @@ static NSString *const cellID = @"cellID";
 - (void)getRequestData{
   NSString *url = [NSString stringWithFormat:@"http://pop.client.chuanke.com/?mod=course&act=info&do=getClassList&sid=%@&courseid=%@&version=%@&uid=%@",self.SID,self.courseId,VERSION,UID];
     [[NetworkSingleton sharedManager] getDataResult:nil url:url successBlock:^(id responseBody) {
+//        NSLog(@"数据。。。。。%@",responseBody);
+        StepList *_stepList = [StepList mj_objectWithKeyValues:responseBody];
+        [self.dataSourceArray removeAllObjects];
+        for (ClassList *_classList in _stepList.StepList) {
+           
+            for (classListModel *_classModel  in _classList.ClassList) {
+                
+                NSLog(@"课程名%@",self.dataSourceArray);
+                [self.dataSourceArray addObject:_classModel];
+            }
+           
+        }
         
+        
+        [self.tableView reloadData];
     } failureBlock:^(NSString *error) {
         
     }];
@@ -129,28 +149,28 @@ static NSString *const cellID = @"cellID";
         //下拉刷新要做的操作.
     }];
 //    gifHeader.stateLabel.hidden = YES;
-//    gifHeader.lastUpdatedTimeLabel.hidden = YES;
+    gifHeader.lastUpdatedTimeLabel.hidden = YES;
     
     [gifHeader setImages:@[headerImages[0]] forState:MJRefreshStateIdle];
     [gifHeader setImages:headerImages forState:MJRefreshStateRefreshing];
     _tableView.mj_header= gifHeader;
     
     
-    NSMutableArray *footerImages = [NSMutableArray array];
-    for (int i = 1; i <= 2; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"icon_listheader_animation_%d",i]];
-        [footerImages addObject:image];
-    }
-    MJRefreshAutoGifFooter *gifFooter = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
-        [self loadMoreData];
-        //上拉加载需要做的操作.
-    }];
+//    NSMutableArray *footerImages = [NSMutableArray array];
+//    for (int i = 1; i <= 2; i++) {
+//        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"icon_listheader_animation_%d",i]];
+//        [footerImages addObject:image];
+//    }
+//    MJRefreshAutoGifFooter *gifFooter = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
+//        //[self loadMoreData];
+//        //上拉加载需要做的操作.
+//    }];
     
 //    gifFooter.stateLabel.hidden = YES;
 //    gifFooter.refreshingTitleHidden = YES;
-    [gifFooter setImages:@[footerImages[0]] forState:MJRefreshStateIdle];
-    [gifFooter setImages:footerImages forState:MJRefreshStateRefreshing];
-    _tableView.mj_footer = gifFooter;
+//    [gifFooter setImages:@[footerImages[0]] forState:MJRefreshStateIdle];
+//    [gifFooter setImages:footerImages forState:MJRefreshStateRefreshing];
+//    _tableView.mj_footer = gifFooter;
     
 }
 
