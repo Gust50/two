@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "classficModel.h"
 @interface firstDetailCell : UITableViewCell
-
+@property(nonatomic,strong)classListModel *model;
 @end

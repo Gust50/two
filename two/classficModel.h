@@ -35,3 +35,9 @@
 @property(nonatomic,strong)NSString *CourseID;
 @property(nonatomic,strong)NSString *SID;
 @end
+
+@interface classListModel : NSObject
+@property(nonatomic,strong)NSString *ClassName;
+@property(nonatomic,strong)NSString *index;
+@property(nonatomic,strong)NSString *VideoTimeLength;
+@end

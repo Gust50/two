@@ -9,7 +9,7 @@
 #import "ListViewController.h"
 #import "listViewCell.h"
 #import "classficModel.h"
-#import <MJRefresh.h>
+
 @interface ListViewController ()<UITableViewDelegate,UITableViewDataSource>{
     courceModel *_courceModel;
     NSInteger _type;///segmemt
