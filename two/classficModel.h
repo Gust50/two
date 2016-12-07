@@ -45,6 +45,10 @@
 
 @interface ClassList : NSObject
 @property(nonatomic,strong)NSMutableArray *ClassList;
+///后加的
+@property(nonatomic, strong) NSString *StepID;
+@property(nonatomic, strong) NSString *StepIndex;
+@property(nonatomic, strong) NSString *StepName;
 @end
 
 @interface StepList : NSObject

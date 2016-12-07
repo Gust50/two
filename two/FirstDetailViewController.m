@@ -17,6 +17,7 @@
 @property(nonatomic,strong)NSMutableArray *dataSourceArray;
 @property(nonatomic,assign)BOOL isSelectedItem;
 @end
+static NSString *const oneID = @"oneID";
 static NSString *const cellID = @"cellID";
 @implementation FirstDetailViewController
 - (NSMutableArray *)dataSourceArray{
@@ -63,6 +64,7 @@ static NSString *const cellID = @"cellID";
     [self.view addSubview:self.tableView];
     [self updateViewConstraints];
     [_tableView registerClass:[firstDetailCell class] forCellReuseIdentifier:cellID];
+    [_tableView registerClass:[UITableViewCell  class] forCellReuseIdentifier:oneID];
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -75,13 +77,19 @@ static NSString *const cellID = @"cellID";
 #pragma mark --- UITableViewDelegate ---
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSourceArray.count;
-//    return 15;
-
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.dataSourceArray[indexPath.row] isKindOfClass:[ClassList class]]) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:oneID forIndexPath:indexPath];
+        ClassList *classList = _dataSourceArray[indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"第%@章:%@",classList.StepIndex,classList.StepName];
+    
+        return cell;
+    }
+    else{
     firstDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath]
     ;
 //    NSDictionary *d = self.dataSourceArray[indexPath.row];
@@ -89,9 +97,9 @@ static NSString *const cellID = @"cellID";
 //    _classListModel = _dataSourceArray[indexPath.row];
     
     classListModel *model = _dataSourceArray[indexPath.row];
-NSLog(@".............................................................................................%@",model.ClassName);
     cell.model = model;
-    return cell;
+        return cell;
+    }
 }
 #pragma mark --- 解析 ---
 - (void)loadNewData{
@@ -117,20 +125,14 @@ NSLog(@"........................................................................
 - (void)getRequestData{
   NSString *url = [NSString stringWithFormat:@"http://pop.client.chuanke.com/?mod=course&act=info&do=getClassList&sid=%@&courseid=%@&version=%@&uid=%@",self.SID,self.courseId,VERSION,UID];
     [[NetworkSingleton sharedManager] getDataResult:nil url:url successBlock:^(id responseBody) {
-//        NSLog(@"数据。。。。。%@",responseBody);
         StepList *_stepList = [StepList mj_objectWithKeyValues:responseBody];
         [self.dataSourceArray removeAllObjects];
         for (ClassList *_classList in _stepList.StepList) {
-           
+            [self.dataSourceArray addObject:_classList];
             for (classListModel *_classModel  in _classList.ClassList) {
-                
-                NSLog(@"课程名%@",self.dataSourceArray);
                 [self.dataSourceArray addObject:_classModel];
             }
-           
         }
-        
-        
         [self.tableView reloadData];
     } failureBlock:^(NSString *error) {
         
