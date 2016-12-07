@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "classficModel.h"
 @interface headerCell : UITableViewCell
-
+@property(nonatomic,strong)courceModel *model;
 @end

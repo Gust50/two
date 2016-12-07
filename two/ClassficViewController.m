@@ -131,7 +131,6 @@ static NSString *const oneID = @"oneID";
         FirstDetailViewController *firstDetailVC = [FirstDetailViewController new];
         NSDictionary *dataDic = _listArray[indexPath.row];
        courceModel *_courceModel  = [courceModel mj_objectWithKeyValues:dataDic];
-//        courceModel *_courceModel = _listArray[indexPath.row -2];
         firstDetailVC.SID = _courceModel.SID;
         firstDetailVC.courseId = _courceModel.CourseID;
         [self pushList:firstDetailVC];

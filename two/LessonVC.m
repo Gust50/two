@@ -12,6 +12,7 @@
 #import "DSCarouselView.h"
 #import "classficModel.h"
 #import "MainVC.h"
+
 @interface LessonVC ()<segementViewDelegate,ClassficViewControllerDelegate>
 
 {

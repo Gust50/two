@@ -137,7 +137,10 @@
         make.top.equalTo(_commentImageView.mas_bottom).offset(2);
         make.centerX.equalTo(_commentImageView);
         make.height.equalTo(@20);
-        make.width.equalTo(@60);
+        make.width.equalTo(@80);
     }];
+}
+- (void)setModel:(courceModel *)model{
+    _commentLabel.text = [NSString stringWithFormat:@"评价(%@)",model.TotalAppraise];
 }
 @end

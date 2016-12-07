@@ -9,7 +9,7 @@
 #import "ListViewController.h"
 #import "listViewCell.h"
 #import "classficModel.h"
-
+#import "FirstDetailViewController.h"
 @interface ListViewController ()<UITableViewDelegate,UITableViewDataSource>{
     courceModel *_courceModel;
     NSInteger _type;///segmemt
@@ -195,9 +195,18 @@ static NSString *const cellID = @"cellID";
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    FirstDetailViewController *firstDetailVC = [FirstDetailViewController new];
+    NSDictionary *dataDic = self.dataSourceArray[indexPath.row];
+    courceModel *model  = [courceModel mj_objectWithKeyValues:dataDic];
+    firstDetailVC.SID = model.SID;
+    firstDetailVC.courseId = model.CourseID;
+    [self pushList:firstDetailVC];
 }
-
+- (void)pushList:(UIViewController *)controller{
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
 #pragma mark --- 解析 ---
 - (void)loadNewData{
     _page = 1;

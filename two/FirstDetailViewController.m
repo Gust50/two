@@ -15,6 +15,7 @@
 {
     NSInteger _page;///页数
     classListModel *_classListModel;
+    courceModel *_courceModel;
 }
 @property(nonatomic,strong)NSMutableArray *dataSourceArray;
 @property(nonatomic,assign)BOOL isSelectedItem;
@@ -36,7 +37,7 @@ static NSString *const headerCellID = @"headerCellID";
         _tableView = [UITableView new];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        
+        _tableView.tableFooterView = [UITableViewHeaderFooterView new];
 //        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //            [self loadNewData];
 //        }];
@@ -51,6 +52,7 @@ static NSString *const headerCellID = @"headerCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     _classListModel = [classListModel new];
+    _courceModel = [courceModel new];
     self.navigationController.navigationBar.barTintColor = RGB(59, 192, 167);
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"课程详情";
@@ -113,6 +115,7 @@ static NSString *const headerCellID = @"headerCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         headerCell *cell = [tableView dequeueReusableCellWithIdentifier:headerCellID forIndexPath:indexPath];
+        cell.model = _courceModel;
         return cell;
     }else{
     if ([self.dataSourceArray[indexPath.row] isKindOfClass:[ClassList class]]) {
@@ -137,6 +140,7 @@ static NSString *const headerCellID = @"headerCellID";
         return nil;
     }
     headerView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerID];
+    headerView.model = _courceModel;
     return headerView;
 }
 
@@ -165,6 +169,7 @@ static NSString *const headerCellID = @"headerCellID";
   NSString *url = [NSString stringWithFormat:@"http://pop.client.chuanke.com/?mod=course&act=info&do=getClassList&sid=%@&courseid=%@&version=%@&uid=%@",self.SID,self.courseId,VERSION,UID];
     [[NetworkSingleton sharedManager] getDataResult:nil url:url successBlock:^(id responseBody) {
         StepList *_stepList = [StepList mj_objectWithKeyValues:responseBody];
+        _courceModel = [courceModel mj_objectWithKeyValues:responseBody];
         [self.dataSourceArray removeAllObjects];
         for (ClassList *_classList in _stepList.StepList) {
             [self.dataSourceArray addObject:_classList];

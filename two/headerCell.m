@@ -156,4 +156,16 @@
         make.top.equalTo(_layerView.mas_top).offset(2);
     }];
 }
+- (void)setModel:(courceModel *)model{
+    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:model.PhotoURL]];
+    _nameLabel.text = model.CourseName;
+    _countLabel.text = [NSString stringWithFormat:@"%@人",model.StudentNumber];
+    _schoolLabel.text = model.SchoolName;
+    if ([model.Cost isEqualToString:@"0"]) {
+        _typeLabel.text = @"¥免费";
+    }
+    else{
+        _typeLabel.text = [NSString stringWithFormat:@"¥%.2f",[model.Cost floatValue]/100.0];
+    }
+}
 @end

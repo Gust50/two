@@ -34,6 +34,9 @@
 @property(nonatomic,strong)NSString *SchoolName;
 @property(nonatomic,strong)NSString *CourseID;
 @property(nonatomic,strong)NSString *SID;
+@property(nonatomic,strong)NSString *StudentNumber;
+@property(nonatomic,strong)NSString *Cost;
+@property(nonatomic,strong)NSString *TotalAppraise;
 @end
 
 @interface classListModel : NSObject

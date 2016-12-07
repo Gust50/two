@@ -15,5 +15,4 @@
 @property(nonatomic, strong) NSMutableArray *cateNameArray;///课程名数组
 @property(nonatomic, strong) NSMutableArray *cateIDArray;///课程ID数组
 
-
 @end
