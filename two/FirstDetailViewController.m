@@ -9,6 +9,8 @@
 #import "FirstDetailViewController.h"
 #import "firstDetailCell.h"
 #import "classficModel.h"
+#import "headerView.h"
+#import "headerCell.h"
 @interface FirstDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger _page;///页数
@@ -16,9 +18,12 @@
 }
 @property(nonatomic,strong)NSMutableArray *dataSourceArray;
 @property(nonatomic,assign)BOOL isSelectedItem;
+
 @end
 static NSString *const oneID = @"oneID";
 static NSString *const cellID = @"cellID";
+static NSString *const headerID = @"headerID";
+static NSString *const headerCellID = @"headerCellID";
 @implementation FirstDetailViewController
 - (NSMutableArray *)dataSourceArray{
     if (!_dataSourceArray) {
@@ -42,9 +47,11 @@ static NSString *const cellID = @"cellID";
     }
     return _tableView;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _classListModel = [classListModel new];
+    self.navigationController.navigationBar.barTintColor = RGB(59, 192, 167);
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"课程详情";
     [self rightImage:@"course_info_bg_collect@2x" push:nil];
@@ -65,6 +72,8 @@ static NSString *const cellID = @"cellID";
     [self updateViewConstraints];
     [_tableView registerClass:[firstDetailCell class] forCellReuseIdentifier:cellID];
     [_tableView registerClass:[UITableViewCell  class] forCellReuseIdentifier:oneID];
+    [_tableView registerClass:[headerView class] forHeaderFooterViewReuseIdentifier:headerID];
+    [_tableView registerClass:[headerCell class] forCellReuseIdentifier:headerCellID];
 }
 - (void)updateViewConstraints{
     [super updateViewConstraints];
@@ -75,13 +84,37 @@ static NSString *const cellID = @"cellID";
     }];
 }
 #pragma mark --- UITableViewDelegate ---
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataSourceArray.count;
+    if (section == 0) {
+        return 1;
+    }
+    else{
+        return self.dataSourceArray.count;
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    if (indexPath.section ==0) {
+        return 110;
+    }
+    else{
+        return 60;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0;
+    }else{
+        return 55;
+    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        headerCell *cell = [tableView dequeueReusableCellWithIdentifier:headerCellID forIndexPath:indexPath];
+        return cell;
+    }else{
     if ([self.dataSourceArray[indexPath.row] isKindOfClass:[ClassList class]]) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:oneID forIndexPath:indexPath];
         ClassList *classList = _dataSourceArray[indexPath.row];
@@ -92,15 +125,21 @@ static NSString *const cellID = @"cellID";
     else{
     firstDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath]
     ;
-//    NSDictionary *d = self.dataSourceArray[indexPath.row];
-//    _classListModel = [classListModel mj_objectWithKeyValues:d];
-//    _classListModel = _dataSourceArray[indexPath.row];
-    
+
     classListModel *model = _dataSourceArray[indexPath.row];
     cell.model = model;
         return cell;
     }
+    }
 }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return nil;
+    }
+    headerView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerID];
+    return headerView;
+}
+
 #pragma mark --- 解析 ---
 - (void)loadNewData{
     _page = 1;

@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00D1D8EB76679343ADFF4D08 /* libPods-two.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A93E7C1A2609965E890D1 /* libPods-two.a */; };
+		CD0C0BB11DF7AD150044F7AC /* headerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0C0BB01DF7AD150044F7AC /* headerView.m */; };
 		CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430CA1DEFA90000B9B74E /* oneCell.m */; };
 		CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */; };
 		CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D91DF007BB00B9B74E /* twoCell.m */; };
 		CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430DC1DF0084100B9B74E /* MainVC.m */; };
 		CD2B9A801DF4F612001EAB3F /* FirstDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */; };
 		CD2B9A831DF572B6001EAB3F /* firstDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */; };
+		CD8386C11DF7BF7B00C0D534 /* headerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8386C01DF7BF7B00C0D534 /* headerCell.m */; };
+		CD8386C31DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
 		CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A41DEC39C00078D2FF /* ViewController.m */; };
@@ -141,6 +144,8 @@
 		010167A0C2A5A9C0A50ADCDC /* Pods-two.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-two.release.xcconfig"; path = "Pods/Target Support Files/Pods-two/Pods-two.release.xcconfig"; sourceTree = "<group>"; };
 		85818A108489FB7D925A2420 /* Pods-two.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-two.debug.xcconfig"; path = "Pods/Target Support Files/Pods-two/Pods-two.debug.xcconfig"; sourceTree = "<group>"; };
 		B24A93E7C1A2609965E890D1 /* libPods-two.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-two.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0C0BAF1DF7AD150044F7AC /* headerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerView.h; sourceTree = "<group>"; };
+		CD0C0BB01DF7AD150044F7AC /* headerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerView.m; sourceTree = "<group>"; };
 		CD1430CA1DEFA90000B9B74E /* oneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneCell.m; sourceTree = "<group>"; };
 		CD1430CB1DEFA90000B9B74E /* oneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneCell.h; sourceTree = "<group>"; };
 		CD1430D41DEFCD2900B9B74E /* NetworkSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSingleton.h; sourceTree = "<group>"; };
@@ -154,6 +159,9 @@
 		CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstDetailViewController.m; sourceTree = "<group>"; };
 		CD2B9A811DF572B6001EAB3F /* firstDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstDetailCell.h; sourceTree = "<group>"; };
 		CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstDetailCell.m; sourceTree = "<group>"; };
+		CD8386BF1DF7BF7B00C0D534 /* headerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerCell.h; sourceTree = "<group>"; };
+		CD8386C01DF7BF7B00C0D534 /* headerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerCell.m; sourceTree = "<group>"; };
+		CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-07 下午2.17.53.png"; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA8949E1DEC39C00078D2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA894A01DEC39C00078D2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -522,6 +530,7 @@
 				CD1430DC1DF0084100B9B74E /* MainVC.m */,
 				CD2B9A7E1DF4F612001EAB3F /* FirstDetailViewController.h */,
 				CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */,
+				CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -539,6 +548,10 @@
 				CDF69B2F1DF1290D00AC5386 /* listViewCell.m */,
 				CD2B9A811DF572B6001EAB3F /* firstDetailCell.h */,
 				CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */,
+				CD0C0BAF1DF7AD150044F7AC /* headerView.h */,
+				CD0C0BB01DF7AD150044F7AC /* headerView.m */,
+				CD8386BF1DF7BF7B00C0D534 /* headerCell.h */,
+				CD8386C01DF7BF7B00C0D534 /* headerCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -897,6 +910,7 @@
 				CDF43E201DEE572000AD1CB9 /* bg_school_share_pre.png in Resources */,
 				CDF43E0F1DEE572000AD1CB9 /* channel_icon_program_unpre.png in Resources */,
 				CDF43DFE1DEE572000AD1CB9 /* channel_icon_abroad_pre.png in Resources */,
+				CD8386C31DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png in Resources */,
 				CDF43E321DEE572000AD1CB9 /* school_pic9@2x.jpg in Resources */,
 				CDF43E3B1DEE572000AD1CB9 /* defualt_course_icon.jpg in Resources */,
 				CDF43E2E1DEE572000AD1CB9 /* school_pic5@2x.jpg in Resources */,
@@ -1013,6 +1027,7 @@
 				CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */,
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,
 				CDDA4E8C1DED149C00506B0A /* NavigationVC.m in Sources */,
+				CD8386C11DF7BF7B00C0D534 /* headerCell.m in Sources */,
 				CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */,
 				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
 				CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */,
@@ -1028,6 +1043,7 @@
 				CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */,
 				CDDA4E951DED1B3900506B0A /* UIView+frame.m in Sources */,
 				CDDA4E861DED13E700506B0A /* MineVC.m in Sources */,
+				CD0C0BB11DF7AD150044F7AC /* headerView.m in Sources */,
 				CDA8949F1DEC39C00078D2FF /* main.m in Sources */,
 				CDDA4E831DED13CA00506B0A /* LessonVC.m in Sources */,
 				CDDA4EC41DED61E500506B0A /* DSCollectionViewCell.m in Sources */,
