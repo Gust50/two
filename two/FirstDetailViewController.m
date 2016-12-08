@@ -13,7 +13,9 @@
 #import "headerCell.h"
 #import "VideoDetailViewController.h"
 #import "SchoolViewController.h"
-@interface FirstDetailViewController ()<UITableViewDelegate,UITableViewDataSource,headerCellDelegate>
+#import "DetailViewController.h"
+#import "CommentViewController.h"
+@interface FirstDetailViewController ()<UITableViewDelegate,UITableViewDataSource,headerCellDelegate,headerViewDelegate>
 {
     NSInteger _page;///页数
     classListModel *_classListModel;
@@ -144,6 +146,7 @@ static NSString *const headerCellID = @"headerCellID";
         return nil;
     }
     headerView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerID];
+    headerView.delegate = self;
     headerView.model = _courceModel;
     return headerView;
 }
@@ -244,4 +247,22 @@ static NSString *const headerCellID = @"headerCellID";
     [self.navigationController pushViewController:schoolVC animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
+#pragma mark --- headerViewDelegate ---
+- (void)tapContentAC{
+    
+}
+- (void)tapDetailAC{
+    NSLog(@"代理商");
+    DetailViewController *detailVC = [DetailViewController new];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
+- (void)tapCommentAC{
+    CommentViewController *commentVC = [CommentViewController new];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:commentVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
 @end

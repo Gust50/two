@@ -26,6 +26,9 @@
         _texLabel.textAlignment = NSTextAlignmentCenter;
         _texLabel.textColor = [UIColor whiteColor];
         _texLabel.font = [UIFont systemFontOfSize:13.0];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapContentAC)];
+        [_texLabel addGestureRecognizer:tap];
+        _texLabel.userInteractionEnabled = YES;
     }
     return _texLabel;
 }
@@ -33,10 +36,17 @@
     if (!_textImageView) {
         _textImageView = [UIImageView new];
         _textImageView.image = [UIImage imageNamed:@"course_catalog_icon"];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapContentAC)];
+        [_textImageView addGestureRecognizer:tap];
+        _textImageView.userInteractionEnabled = YES;
     }
     return _textImageView;
 }
-
+- (void)tapContentAC{
+    if (self.delegate &&[self.delegate respondsToSelector:@selector(tapContentAC)])  {
+        [self.delegate tapContentAC];
+    }
+}
 - (UILabel *)detailLabel{
     if (!_detailLabel) {
         _detailLabel = [UILabel new];
@@ -44,7 +54,9 @@
         _detailLabel.textAlignment = NSTextAlignmentCenter;
         _detailLabel.textColor = [UIColor whiteColor];
         _detailLabel.font = [UIFont systemFontOfSize:13.0];
-
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetailAC)];
+        [_detailLabel addGestureRecognizer:tap];
+        _detailLabel.userInteractionEnabled = YES;
     }
     return _detailLabel;
 }
@@ -52,10 +64,18 @@
     if (!_detailImageView) {
         _detailImageView = [UIImageView new];
         _detailImageView.image = [UIImage imageNamed:@"course_info_icon"];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetailAC)];
+        [_detailImageView addGestureRecognizer:tap];
+        _detailImageView.userInteractionEnabled = YES;
+
     }
     return _detailImageView;
 }
-
+- (void)tapDetailAC{
+    if (self.delegate &&[self.delegate respondsToSelector:@selector(tapDetailAC)])  {
+        [self.delegate tapDetailAC];
+    }
+}
 - (UILabel *)commentLabel{
     if (!_commentLabel) {
         _commentLabel = [UILabel new];
@@ -63,7 +83,9 @@
         _commentLabel.textAlignment = NSTextAlignmentCenter;
         _commentLabel.textColor = [UIColor whiteColor];
         _commentLabel.font = [UIFont systemFontOfSize:13.0];
-
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCommentAC)];
+        _commentLabel.userInteractionEnabled = YES;
+        [_commentLabel addGestureRecognizer:tap];
     }
     return _commentLabel;
 }
@@ -71,17 +93,18 @@
     if (!_commentImageView) {
         _commentImageView = [UIImageView new];
         _commentImageView.image = [UIImage imageNamed:@"course_catalog_icon"];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCommentAC)];
+        _commentImageView.userInteractionEnabled = YES;
+        [_commentImageView addGestureRecognizer:tap];
     }
     return _commentImageView;
 }
-//- (instancetype)initWithFrame:(CGRect)frame{
-//    NSLog(@"头部333");
-//    if (self = [super initWithFrame:frame]) {
-//        self.backgroundColor = [UIColor blueColor];
-//        [self initUI];
-//    }
-//    return self;
-//}
+- (void)tapCommentAC{
+    if (self.delegate &&[self.delegate respondsToSelector:@selector(tapCommentAC)])  {
+        [self.delegate tapCommentAC];
+    }
+}
+
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
     if (self == [super initWithReuseIdentifier:reuseIdentifier]) {
         [self initUI];

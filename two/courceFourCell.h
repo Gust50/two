@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol  courceFourCellDelegate<NSObject>
+- (void)moreBtnAC;
+@end
 @interface courceFourCell : UITableViewCell
-
+@property(nonatomic,weak)id<courceFourCellDelegate>delegate;
 @end

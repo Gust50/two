@@ -10,7 +10,8 @@
 #import "courceOneCell.h"
 #import "courceThreeCell.h"
 #import "courceFourCell.h"
-@interface SchoolViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "MoreViewController.h"
+@interface SchoolViewController ()<UITableViewDelegate,UITableViewDataSource,courceFourCellDelegate>
 @property(nonatomic,assign)BOOL isSelectedItem;
 @property(nonatomic,strong)UITableView *tableView;
 @end
@@ -24,9 +25,9 @@ static NSString *const fourID = @"fourID";
         _tableView = [UITableView new];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        UIView *view = [UIView new];
-        view.backgroundColor = RGB(237, 236, 242);
-        _tableView.tableFooterView = view;
+          _tableView.tableFooterView = [UITableViewHeaderFooterView new];
+        _tableView.tableFooterView.backgroundColor = RGB(235, 234, 241);
+        _tableView.sectionIndexBackgroundColor = RGB(235, 234, 241);
     }
     return _tableView;
 }
@@ -85,6 +86,7 @@ static NSString *const fourID = @"fourID";
         return cell;
     }else{
         courceFourCell *cell = [tableView dequeueReusableCellWithIdentifier:fourID forIndexPath:indexPath];
+        cell.delegate = self;
         return cell;
     }
     
@@ -95,10 +97,10 @@ static NSString *const fourID = @"fourID";
             return 266;
             break;
         case 1:
-            return 29;
+            return 26;
             break;
         case 2:
-            return 120;
+            return 110;
             break;
         case 3:
             return 130;
@@ -112,7 +114,14 @@ static NSString *const fourID = @"fourID";
     if (section == 0) {
         return 0;
     }else{
-        return 11;
+        return 10;
     }
+}
+#pragma mark --- courceDelegate ---
+- (void)moreBtnAC{
+    MoreViewController *MoreVC = [MoreViewController new];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:MoreVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 @end
