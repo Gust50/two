@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00D1D8EB76679343ADFF4D08 /* libPods-two.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A93E7C1A2609965E890D1 /* libPods-two.a */; };
+		CD00523B1DF8FFAE00E76BF5 /* SchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD00523A1DF8FFAE00E76BF5 /* SchoolViewController.m */; };
+		CD00523E1DF907A400E76BF5 /* courceOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD00523D1DF907A400E76BF5 /* courceOneCell.m */; };
+		CD0052411DF907B500E76BF5 /* courceThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0052401DF907B500E76BF5 /* courceThreeCell.m */; };
+		CD0052441DF907C600E76BF5 /* courceFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0052431DF907C600E76BF5 /* courceFourCell.m */; };
+		CD0052461DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0052451DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png */; };
+		CD0052481DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0052471DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png */; };
 		CD0C0BB11DF7AD150044F7AC /* headerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0C0BB01DF7AD150044F7AC /* headerView.m */; };
 		CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430CA1DEFA90000B9B74E /* oneCell.m */; };
 		CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */; };
@@ -17,6 +23,7 @@
 		CD2B9A831DF572B6001EAB3F /* firstDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */; };
 		CD8386C11DF7BF7B00C0D534 /* headerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8386C01DF7BF7B00C0D534 /* headerCell.m */; };
 		CD8386C31DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */; };
+		CD8386C61DF7FA3700C0D534 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8386C51DF7FA3700C0D534 /* VideoDetailViewController.m */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
 		CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A41DEC39C00078D2FF /* ViewController.m */; };
@@ -144,6 +151,16 @@
 		010167A0C2A5A9C0A50ADCDC /* Pods-two.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-two.release.xcconfig"; path = "Pods/Target Support Files/Pods-two/Pods-two.release.xcconfig"; sourceTree = "<group>"; };
 		85818A108489FB7D925A2420 /* Pods-two.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-two.debug.xcconfig"; path = "Pods/Target Support Files/Pods-two/Pods-two.debug.xcconfig"; sourceTree = "<group>"; };
 		B24A93E7C1A2609965E890D1 /* libPods-two.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-two.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0052391DF8FFAE00E76BF5 /* SchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolViewController.h; sourceTree = "<group>"; };
+		CD00523A1DF8FFAE00E76BF5 /* SchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolViewController.m; sourceTree = "<group>"; };
+		CD00523C1DF907A400E76BF5 /* courceOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courceOneCell.h; sourceTree = "<group>"; };
+		CD00523D1DF907A400E76BF5 /* courceOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courceOneCell.m; sourceTree = "<group>"; };
+		CD00523F1DF907B500E76BF5 /* courceThreeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courceThreeCell.h; sourceTree = "<group>"; };
+		CD0052401DF907B500E76BF5 /* courceThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courceThreeCell.m; sourceTree = "<group>"; };
+		CD0052421DF907C600E76BF5 /* courceFourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courceFourCell.h; sourceTree = "<group>"; };
+		CD0052431DF907C600E76BF5 /* courceFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courceFourCell.m; sourceTree = "<group>"; };
+		CD0052451DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-08 上午11.45.39.png"; sourceTree = "<group>"; };
+		CD0052471DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-08 上午11.45.47.png"; sourceTree = "<group>"; };
 		CD0C0BAF1DF7AD150044F7AC /* headerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerView.h; sourceTree = "<group>"; };
 		CD0C0BB01DF7AD150044F7AC /* headerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerView.m; sourceTree = "<group>"; };
 		CD1430CA1DEFA90000B9B74E /* oneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneCell.m; sourceTree = "<group>"; };
@@ -162,6 +179,8 @@
 		CD8386BF1DF7BF7B00C0D534 /* headerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerCell.h; sourceTree = "<group>"; };
 		CD8386C01DF7BF7B00C0D534 /* headerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerCell.m; sourceTree = "<group>"; };
 		CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-07 下午2.17.53.png"; sourceTree = "<group>"; };
+		CD8386C41DF7FA3700C0D534 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
+		CD8386C51DF7FA3700C0D534 /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA8949E1DEC39C00078D2FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA894A01DEC39C00078D2FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -530,7 +549,13 @@
 				CD1430DC1DF0084100B9B74E /* MainVC.m */,
 				CD2B9A7E1DF4F612001EAB3F /* FirstDetailViewController.h */,
 				CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */,
+				CD8386C41DF7FA3700C0D534 /* VideoDetailViewController.h */,
+				CD8386C51DF7FA3700C0D534 /* VideoDetailViewController.m */,
+				CD0052391DF8FFAE00E76BF5 /* SchoolViewController.h */,
+				CD00523A1DF8FFAE00E76BF5 /* SchoolViewController.m */,
 				CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */,
+				CD0052451DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png */,
+				CD0052471DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -552,6 +577,12 @@
 				CD0C0BB01DF7AD150044F7AC /* headerView.m */,
 				CD8386BF1DF7BF7B00C0D534 /* headerCell.h */,
 				CD8386C01DF7BF7B00C0D534 /* headerCell.m */,
+				CD00523C1DF907A400E76BF5 /* courceOneCell.h */,
+				CD00523D1DF907A400E76BF5 /* courceOneCell.m */,
+				CD00523F1DF907B500E76BF5 /* courceThreeCell.h */,
+				CD0052401DF907B500E76BF5 /* courceThreeCell.m */,
+				CD0052421DF907C600E76BF5 /* courceFourCell.h */,
+				CD0052431DF907C600E76BF5 /* courceFourCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -879,6 +910,7 @@
 				CDF43E351DEE572000AD1CB9 /* file_tital_back_but@2x.png in Resources */,
 				CDF43E191DEE572000AD1CB9 /* course_info_bg_collect@2x.png in Resources */,
 				CDF43E571DEEAB7700AD1CB9 /* iCategoryList.plist in Resources */,
+				CD0052481DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png in Resources */,
 				CDA894AA1DEC39C00078D2FF /* Assets.xcassets in Resources */,
 				CDF43E021DEE572000AD1CB9 /* channel_icon_college_pre.png in Resources */,
 				CDF43E2A1DEE572000AD1CB9 /* school_pic1@2x.jpg in Resources */,
@@ -938,6 +970,7 @@
 				CDF43E301DEE572000AD1CB9 /* school_pic7@2x.jpg in Resources */,
 				CDF43E161DEE572000AD1CB9 /* course_class_study_status_end.png in Resources */,
 				CDDA4EC51DED61E500506B0A /* DSCollectionViewCell.xib in Resources */,
+				CD0052461DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png in Resources */,
 				CDF43E391DEE572000AD1CB9 /* test_status_not.png in Resources */,
 				CDF43E281DEE572000AD1CB9 /* desktop@2x.png in Resources */,
 				CDF43E1C1DEE572000AD1CB9 /* course_school_icon.png in Resources */,
@@ -1024,6 +1057,7 @@
 				CDDA4E911DED1B2700506B0A /* BaseViewController.m in Sources */,
 				CD2B9A801DF4F612001EAB3F /* FirstDetailViewController.m in Sources */,
 				CDF43E5A1DEEB2B700AD1CB9 /* classficModel.m in Sources */,
+				CD0052411DF907B500E76BF5 /* courceThreeCell.m in Sources */,
 				CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */,
 				CDDA4E801DED11C400506B0A /* MainTabBar.m in Sources */,
 				CDDA4E8C1DED149C00506B0A /* NavigationVC.m in Sources */,
@@ -1032,11 +1066,13 @@
 				CDDA4EAC1DED509D00506B0A /* segementView.m in Sources */,
 				CD1430DE1DF0084100B9B74E /* MainVC.m in Sources */,
 				CD2B9A831DF572B6001EAB3F /* firstDetailCell.m in Sources */,
+				CD0052441DF907C600E76BF5 /* courceFourCell.m in Sources */,
 				CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
 				CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */,
 				CDDA4E921DED1B2700506B0A /* SearchBaseController.m in Sources */,
 				CDF43E5D1DEEC44000AD1CB9 /* ListViewController.m in Sources */,
+				CD00523B1DF8FFAE00E76BF5 /* SchoolViewController.m in Sources */,
 				CDF43E511DEE9DFF00AD1CB9 /* classifyCell.m in Sources */,
 				CDDA4EC31DED61E500506B0A /* DSCarouselView.m in Sources */,
 				CDA894A51DEC39C00078D2FF /* ViewController.m in Sources */,
@@ -1044,8 +1080,10 @@
 				CDDA4E951DED1B3900506B0A /* UIView+frame.m in Sources */,
 				CDDA4E861DED13E700506B0A /* MineVC.m in Sources */,
 				CD0C0BB11DF7AD150044F7AC /* headerView.m in Sources */,
+				CD8386C61DF7FA3700C0D534 /* VideoDetailViewController.m in Sources */,
 				CDA8949F1DEC39C00078D2FF /* main.m in Sources */,
 				CDDA4E831DED13CA00506B0A /* LessonVC.m in Sources */,
+				CD00523E1DF907A400E76BF5 /* courceOneCell.m in Sources */,
 				CDDA4EC41DED61E500506B0A /* DSCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

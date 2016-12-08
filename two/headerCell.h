@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "classficModel.h"
+
+@protocol headerCellDelegate <NSObject>
+- (void)arrowBtnAC;
+@end
+
 @interface headerCell : UITableViewCell
 @property(nonatomic,strong)courceModel *model;
+@property(nonatomic,weak)id<headerCellDelegate>delegate;
 @end

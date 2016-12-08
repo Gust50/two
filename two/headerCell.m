@@ -83,8 +83,14 @@
     if (!_arrowBtn) {
         _arrowBtn = [UIButton new];
         [_arrowBtn setImage:[UIImage imageNamed:@"course_school_classify_icon"] forState:UIControlStateNormal];
+        [_arrowBtn addTarget:self action:@selector(arrowBtnAC) forControlEvents:UIControlEventTouchUpInside];
     }
     return _arrowBtn;
+}
+- (void)arrowBtnAC{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(arrowBtnAC)]) {
+        [self.delegate arrowBtnAC];
+    }
 }
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {

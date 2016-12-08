@@ -52,6 +52,7 @@
 @property(nonatomic, strong) NSString *StepID;
 @property(nonatomic, strong) NSString *StepIndex;
 @property(nonatomic, strong) NSString *StepName;
+@property(nonatomic,strong)NSString *VideoUrl;
 @end
 
 @interface StepList : NSObject

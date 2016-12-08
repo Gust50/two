@@ -11,7 +11,9 @@
 #import "classficModel.h"
 #import "headerView.h"
 #import "headerCell.h"
-@interface FirstDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "VideoDetailViewController.h"
+#import "SchoolViewController.h"
+@interface FirstDetailViewController ()<UITableViewDelegate,UITableViewDataSource,headerCellDelegate>
 {
     NSInteger _page;///页数
     classListModel *_classListModel;
@@ -65,6 +67,7 @@ static NSString *const headerCellID = @"headerCellID";
     _isSelectedItem = !_isSelectedItem;
     if (_isSelectedItem) {
         [self.navigationItem.rightBarButtonItem setImage:[[UIImage imageNamed:@"course_info_bg_collected@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        
     }else{
         [self.navigationItem.rightBarButtonItem setImage:[[UIImage imageNamed:@"course_info_bg_collect@2x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
@@ -116,6 +119,7 @@ static NSString *const headerCellID = @"headerCellID";
     if (indexPath.section == 0) {
         headerCell *cell = [tableView dequeueReusableCellWithIdentifier:headerCellID forIndexPath:indexPath];
         cell.model = _courceModel;
+        cell.delegate = self;
         return cell;
     }else{
     if ([self.dataSourceArray[indexPath.row] isKindOfClass:[ClassList class]]) {
@@ -143,7 +147,20 @@ static NSString *const headerCellID = @"headerCellID";
     headerView.model = _courceModel;
     return headerView;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([_dataSourceArray[indexPath.row] isKindOfClass:[ClassList class]]) {
+        ClassList *classList = _dataSourceArray[indexPath.row];
+        if (classList.VideoUrl == nil) {
+            [SVProgressHUD showErrorWithStatus:@"当前课程视频暂时没有"];
+//            return;
+        }
+        VideoDetailViewController *videoVC = [[VideoDetailViewController alloc] init];
+        videoVC.FileUrl = VIDEOURL;
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:videoVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    }
+}
 #pragma mark --- 解析 ---
 - (void)loadNewData{
     _page = 1;
@@ -219,5 +236,12 @@ static NSString *const headerCellID = @"headerCellID";
 //    _tableView.mj_footer = gifFooter;
     
 }
-
+#pragma mark --- headerCellDelegate ---
+- (void)arrowBtnAC{
+    SchoolViewController *schoolVC = [SchoolViewController new];
+    schoolVC.SID = _courceModel.SID;
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:schoolVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
 @end
