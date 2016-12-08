@@ -12,9 +12,6 @@
 		CD00523E1DF907A400E76BF5 /* courceOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD00523D1DF907A400E76BF5 /* courceOneCell.m */; };
 		CD0052411DF907B500E76BF5 /* courceThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0052401DF907B500E76BF5 /* courceThreeCell.m */; };
 		CD0052441DF907C600E76BF5 /* courceFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0052431DF907C600E76BF5 /* courceFourCell.m */; };
-		CD0052461DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0052451DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png */; };
-		CD0052481DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0052471DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png */; };
-		CD00524A1DF93CCB00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.20.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0052491DF93CCB00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.20.png */; };
 		CD00524D1DF9402300E76BF5 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD00524C1DF9402300E76BF5 /* MoreViewController.m */; };
 		CD0052501DF94B6700E76BF5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD00524F1DF94B6700E76BF5 /* DetailViewController.m */; };
 		CD0052531DF94B7700E76BF5 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0052521DF94B7700E76BF5 /* CommentViewController.m */; };
@@ -26,7 +23,6 @@
 		CD2B9A801DF4F612001EAB3F /* FirstDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */; };
 		CD2B9A831DF572B6001EAB3F /* firstDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */; };
 		CD8386C11DF7BF7B00C0D534 /* headerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8386C01DF7BF7B00C0D534 /* headerCell.m */; };
-		CD8386C31DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */; };
 		CD8386C61DF7FA3700C0D534 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8386C51DF7FA3700C0D534 /* VideoDetailViewController.m */; };
 		CDA8949F1DEC39C00078D2FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8949E1DEC39C00078D2FF /* main.m */; };
 		CDA894A21DEC39C00078D2FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA894A11DEC39C00078D2FF /* AppDelegate.m */; };
@@ -163,9 +159,6 @@
 		CD0052401DF907B500E76BF5 /* courceThreeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courceThreeCell.m; sourceTree = "<group>"; };
 		CD0052421DF907C600E76BF5 /* courceFourCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courceFourCell.h; sourceTree = "<group>"; };
 		CD0052431DF907C600E76BF5 /* courceFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courceFourCell.m; sourceTree = "<group>"; };
-		CD0052451DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-08 上午11.45.39.png"; sourceTree = "<group>"; };
-		CD0052471DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-08 上午11.45.47.png"; sourceTree = "<group>"; };
-		CD0052491DF93CCB00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-08 上午11.45.20.png"; sourceTree = "<group>"; };
 		CD00524B1DF9402300E76BF5 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		CD00524C1DF9402300E76BF5 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		CD00524E1DF94B6700E76BF5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -189,7 +182,6 @@
 		CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstDetailCell.m; sourceTree = "<group>"; };
 		CD8386BF1DF7BF7B00C0D534 /* headerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerCell.h; sourceTree = "<group>"; };
 		CD8386C01DF7BF7B00C0D534 /* headerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerCell.m; sourceTree = "<group>"; };
-		CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2016-12-07 下午2.17.53.png"; sourceTree = "<group>"; };
 		CD8386C41DF7FA3700C0D534 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
 		CD8386C51DF7FA3700C0D534 /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
 		CDA8949A1DEC39C00078D2FF /* two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = two.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,6 +349,95 @@
 				B24A93E7C1A2609965E890D1 /* libPods-two.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD0052541DF950E800E76BF5 /* first floor */ = {
+			isa = PBXGroup;
+			children = (
+				CDDA4E811DED13CA00506B0A /* LessonVC.h */,
+				CDDA4E821DED13CA00506B0A /* LessonVC.m */,
+				CDF43E4C1DEE834C00AD1CB9 /* ClassficViewController.h */,
+				CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */,
+				CD1430DD1DF0084100B9B74E /* MainVC.h */,
+				CD1430DC1DF0084100B9B74E /* MainVC.m */,
+			);
+			name = "first floor";
+			sourceTree = "<group>";
+		};
+		CD0052551DF9512600E76BF5 /* second floor */ = {
+			isa = PBXGroup;
+			children = (
+				CDF43E5B1DEEC44000AD1CB9 /* ListViewController.h */,
+				CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */,
+				CD2B9A7E1DF4F612001EAB3F /* FirstDetailViewController.h */,
+				CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */,
+			);
+			name = "second floor";
+			sourceTree = "<group>";
+		};
+		CD0052561DF9518900E76BF5 /* three floor */ = {
+			isa = PBXGroup;
+			children = (
+				CD0052391DF8FFAE00E76BF5 /* SchoolViewController.h */,
+				CD00523A1DF8FFAE00E76BF5 /* SchoolViewController.m */,
+				CD00524E1DF94B6700E76BF5 /* DetailViewController.h */,
+				CD00524F1DF94B6700E76BF5 /* DetailViewController.m */,
+				CD0052511DF94B7700E76BF5 /* CommentViewController.h */,
+				CD0052521DF94B7700E76BF5 /* CommentViewController.m */,
+			);
+			name = "three floor";
+			sourceTree = "<group>";
+		};
+		CD0052571DF951D300E76BF5 /* four floor */ = {
+			isa = PBXGroup;
+			children = (
+				CD8386C41DF7FA3700C0D534 /* VideoDetailViewController.h */,
+				CD8386C51DF7FA3700C0D534 /* VideoDetailViewController.m */,
+				CD00524B1DF9402300E76BF5 /* MoreViewController.h */,
+				CD00524C1DF9402300E76BF5 /* MoreViewController.m */,
+			);
+			name = "four floor";
+			sourceTree = "<group>";
+		};
+		CD0052581DF9523700E76BF5 /* first floor view */ = {
+			isa = PBXGroup;
+			children = (
+				CD1430DA1DF007BB00B9B74E /* twoCell.h */,
+				CD1430D91DF007BB00B9B74E /* twoCell.m */,
+				CD1430CB1DEFA90000B9B74E /* oneCell.h */,
+				CD1430CA1DEFA90000B9B74E /* oneCell.m */,
+				CDF43E501DEE9DFF00AD1CB9 /* classifyCell.h */,
+				CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */,
+			);
+			name = "first floor view";
+			sourceTree = "<group>";
+		};
+		CD0052591DF9524700E76BF5 /* second floor view */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B9A811DF572B6001EAB3F /* firstDetailCell.h */,
+				CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */,
+				CD0C0BAF1DF7AD150044F7AC /* headerView.h */,
+				CD0C0BB01DF7AD150044F7AC /* headerView.m */,
+				CD8386BF1DF7BF7B00C0D534 /* headerCell.h */,
+				CD8386C01DF7BF7B00C0D534 /* headerCell.m */,
+				CDF69B2E1DF1290D00AC5386 /* listViewCell.h */,
+				CDF69B2F1DF1290D00AC5386 /* listViewCell.m */,
+			);
+			name = "second floor view";
+			sourceTree = "<group>";
+		};
+		CD00525A1DF9526100E76BF5 /* three floor */ = {
+			isa = PBXGroup;
+			children = (
+				CD00523C1DF907A400E76BF5 /* courceOneCell.h */,
+				CD00523D1DF907A400E76BF5 /* courceOneCell.m */,
+				CD00523F1DF907B500E76BF5 /* courceThreeCell.h */,
+				CD0052401DF907B500E76BF5 /* courceThreeCell.m */,
+				CD0052421DF907C600E76BF5 /* courceFourCell.h */,
+				CD0052431DF907C600E76BF5 /* courceFourCell.m */,
+			);
+			name = "three floor";
 			sourceTree = "<group>";
 		};
 		CD1430D31DEFCD2900B9B74E /* Network */ = {
@@ -550,30 +631,10 @@
 		CDDA4E9E1DED208900506B0A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CDDA4E811DED13CA00506B0A /* LessonVC.h */,
-				CDDA4E821DED13CA00506B0A /* LessonVC.m */,
-				CDF43E4C1DEE834C00AD1CB9 /* ClassficViewController.h */,
-				CDF43E4D1DEE835300AD1CB9 /* ClassficViewController.m */,
-				CDF43E5B1DEEC44000AD1CB9 /* ListViewController.h */,
-				CDF43E5C1DEEC44000AD1CB9 /* ListViewController.m */,
-				CD1430DD1DF0084100B9B74E /* MainVC.h */,
-				CD1430DC1DF0084100B9B74E /* MainVC.m */,
-				CD2B9A7E1DF4F612001EAB3F /* FirstDetailViewController.h */,
-				CD2B9A7F1DF4F612001EAB3F /* FirstDetailViewController.m */,
-				CD8386C41DF7FA3700C0D534 /* VideoDetailViewController.h */,
-				CD8386C51DF7FA3700C0D534 /* VideoDetailViewController.m */,
-				CD0052391DF8FFAE00E76BF5 /* SchoolViewController.h */,
-				CD00523A1DF8FFAE00E76BF5 /* SchoolViewController.m */,
-				CD00524B1DF9402300E76BF5 /* MoreViewController.h */,
-				CD00524C1DF9402300E76BF5 /* MoreViewController.m */,
-				CD00524E1DF94B6700E76BF5 /* DetailViewController.h */,
-				CD00524F1DF94B6700E76BF5 /* DetailViewController.m */,
-				CD0052511DF94B7700E76BF5 /* CommentViewController.h */,
-				CD0052521DF94B7700E76BF5 /* CommentViewController.m */,
-				CD8386C21DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png */,
-				CD0052451DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png */,
-				CD0052471DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png */,
-				CD0052491DF93CCB00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.20.png */,
+				CD0052541DF950E800E76BF5 /* first floor */,
+				CD0052551DF9512600E76BF5 /* second floor */,
+				CD0052561DF9518900E76BF5 /* three floor */,
+				CD0052571DF951D300E76BF5 /* four floor */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -581,26 +642,9 @@
 		CDDA4E9F1DED209600506B0A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD1430CB1DEFA90000B9B74E /* oneCell.h */,
-				CD1430CA1DEFA90000B9B74E /* oneCell.m */,
-				CDF43E501DEE9DFF00AD1CB9 /* classifyCell.h */,
-				CDF43E4F1DEE9DFF00AD1CB9 /* classifyCell.m */,
-				CD1430DA1DF007BB00B9B74E /* twoCell.h */,
-				CD1430D91DF007BB00B9B74E /* twoCell.m */,
-				CDF69B2E1DF1290D00AC5386 /* listViewCell.h */,
-				CDF69B2F1DF1290D00AC5386 /* listViewCell.m */,
-				CD2B9A811DF572B6001EAB3F /* firstDetailCell.h */,
-				CD2B9A821DF572B6001EAB3F /* firstDetailCell.m */,
-				CD0C0BAF1DF7AD150044F7AC /* headerView.h */,
-				CD0C0BB01DF7AD150044F7AC /* headerView.m */,
-				CD8386BF1DF7BF7B00C0D534 /* headerCell.h */,
-				CD8386C01DF7BF7B00C0D534 /* headerCell.m */,
-				CD00523C1DF907A400E76BF5 /* courceOneCell.h */,
-				CD00523D1DF907A400E76BF5 /* courceOneCell.m */,
-				CD00523F1DF907B500E76BF5 /* courceThreeCell.h */,
-				CD0052401DF907B500E76BF5 /* courceThreeCell.m */,
-				CD0052421DF907C600E76BF5 /* courceFourCell.h */,
-				CD0052431DF907C600E76BF5 /* courceFourCell.m */,
+				CD0052581DF9523700E76BF5 /* first floor view */,
+				CD0052591DF9524700E76BF5 /* second floor view */,
+				CD00525A1DF9526100E76BF5 /* three floor */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -928,7 +972,6 @@
 				CDF43E351DEE572000AD1CB9 /* file_tital_back_but@2x.png in Resources */,
 				CDF43E191DEE572000AD1CB9 /* course_info_bg_collect@2x.png in Resources */,
 				CDF43E571DEEAB7700AD1CB9 /* iCategoryList.plist in Resources */,
-				CD0052481DF90F0000E76BF5 /* 屏幕快照 2016-12-08 上午11.45.47.png in Resources */,
 				CDA894AA1DEC39C00078D2FF /* Assets.xcassets in Resources */,
 				CDF43E021DEE572000AD1CB9 /* channel_icon_college_pre.png in Resources */,
 				CDF43E2A1DEE572000AD1CB9 /* school_pic1@2x.jpg in Resources */,
@@ -960,7 +1003,6 @@
 				CDF43E201DEE572000AD1CB9 /* bg_school_share_pre.png in Resources */,
 				CDF43E0F1DEE572000AD1CB9 /* channel_icon_program_unpre.png in Resources */,
 				CDF43DFE1DEE572000AD1CB9 /* channel_icon_abroad_pre.png in Resources */,
-				CD8386C31DF7E12400C0D534 /* 屏幕快照 2016-12-07 下午2.17.53.png in Resources */,
 				CDF43E321DEE572000AD1CB9 /* school_pic9@2x.jpg in Resources */,
 				CDF43E3B1DEE572000AD1CB9 /* defualt_course_icon.jpg in Resources */,
 				CDF43E2E1DEE572000AD1CB9 /* school_pic5@2x.jpg in Resources */,
@@ -981,7 +1023,6 @@
 				CDF43E031DEE572000AD1CB9 /* channel_icon_college_unpre.png in Resources */,
 				CDF43DFF1DEE572000AD1CB9 /* channel_icon_abroad_unpre.png in Resources */,
 				CDF43E431DEE572000AD1CB9 /* bottom_tab1_pre@2x.png in Resources */,
-				CD00524A1DF93CCB00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.20.png in Resources */,
 				CDF43E2D1DEE572000AD1CB9 /* school_pic4@2x.jpg in Resources */,
 				CDF43E1A1DEE572000AD1CB9 /* course_info_bg_collected@2x.png in Resources */,
 				CDF43E221DEE572000AD1CB9 /* course_catalog_icon.png in Resources */,
@@ -989,7 +1030,6 @@
 				CDF43E301DEE572000AD1CB9 /* school_pic7@2x.jpg in Resources */,
 				CDF43E161DEE572000AD1CB9 /* course_class_study_status_end.png in Resources */,
 				CDDA4EC51DED61E500506B0A /* DSCollectionViewCell.xib in Resources */,
-				CD0052461DF90EFC00E76BF5 /* 屏幕快照 2016-12-08 上午11.45.39.png in Resources */,
 				CDF43E391DEE572000AD1CB9 /* test_status_not.png in Resources */,
 				CDF43E281DEE572000AD1CB9 /* desktop@2x.png in Resources */,
 				CDF43E1C1DEE572000AD1CB9 /* course_school_icon.png in Resources */,
