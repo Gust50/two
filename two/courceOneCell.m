@@ -224,4 +224,10 @@
 //    }];
     
 }
+- (void)setModel:(schoolModel *)model{
+    [_topImageView sd_setImageWithURL:[NSURL URLWithString:model.SchoolLogoUrl]];
+    [_leftImageView sd_setImageWithURL:[NSURL URLWithString:model.SchoolLogoUrl]];
+    _countLabel.text = model.CourseSaleNumber;
+    _playLabel.text = model.PrelectNum;
+}
 @end

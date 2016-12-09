@@ -260,6 +260,8 @@ static NSString *const headerCellID = @"headerCellID";
 }
 - (void)tapCommentAC{
     CommentViewController *commentVC = [CommentViewController new];
+    commentVC.SID = self.SID;
+    commentVC.courseID = self.courseId;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:commentVC animated:YES];
     self.hidesBottomBarWhenPushed = NO;

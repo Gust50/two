@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MoreViewController : BaseViewController
-
+@property(nonatomic,strong)NSString *SID;///学校ID
 @end

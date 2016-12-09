@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CommentViewController : BaseViewController
-
+@property(nonatomic,strong)NSString *SID;
+@property(nonatomic,strong)NSString *courseID;
 @end

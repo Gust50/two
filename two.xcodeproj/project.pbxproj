@@ -16,6 +16,7 @@
 		CD0052501DF94B6700E76BF5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD00524F1DF94B6700E76BF5 /* DetailViewController.m */; };
 		CD0052531DF94B7700E76BF5 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0052521DF94B7700E76BF5 /* CommentViewController.m */; };
 		CD0C0BB11DF7AD150044F7AC /* headerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0C0BB01DF7AD150044F7AC /* headerView.m */; };
+		CD0D3EDB1DFA43880049F30E /* commentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0D3EDA1DFA43880049F30E /* commentCell.m */; };
 		CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430CA1DEFA90000B9B74E /* oneCell.m */; };
 		CD1430D61DEFCD2900B9B74E /* NetworkSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D51DEFCD2900B9B74E /* NetworkSingleton.m */; };
 		CD1430DB1DF007BB00B9B74E /* twoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1430D91DF007BB00B9B74E /* twoCell.m */; };
@@ -167,6 +168,8 @@
 		CD0052521DF94B7700E76BF5 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		CD0C0BAF1DF7AD150044F7AC /* headerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerView.h; sourceTree = "<group>"; };
 		CD0C0BB01DF7AD150044F7AC /* headerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerView.m; sourceTree = "<group>"; };
+		CD0D3ED91DFA43880049F30E /* commentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentCell.h; sourceTree = "<group>"; };
+		CD0D3EDA1DFA43880049F30E /* commentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentCell.m; sourceTree = "<group>"; };
 		CD1430CA1DEFA90000B9B74E /* oneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneCell.m; sourceTree = "<group>"; };
 		CD1430CB1DEFA90000B9B74E /* oneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneCell.h; sourceTree = "<group>"; };
 		CD1430D41DEFCD2900B9B74E /* NetworkSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSingleton.h; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				CD0052401DF907B500E76BF5 /* courceThreeCell.m */,
 				CD0052421DF907C600E76BF5 /* courceFourCell.h */,
 				CD0052431DF907C600E76BF5 /* courceFourCell.m */,
+				CD0D3ED91DFA43880049F30E /* commentCell.h */,
+				CD0D3EDA1DFA43880049F30E /* commentCell.m */,
 			);
 			name = "three floor";
 			sourceTree = "<group>";
@@ -1129,6 +1134,7 @@
 				CD0052441DF907C600E76BF5 /* courceFourCell.m in Sources */,
 				CD1430CC1DEFA90000B9B74E /* oneCell.m in Sources */,
 				CDDA4E981DED1BAF00506B0A /* SearchVC.m in Sources */,
+				CD0D3EDB1DFA43880049F30E /* commentCell.m in Sources */,
 				CDF43E4E1DEE835300AD1CB9 /* ClassficViewController.m in Sources */,
 				CDDA4E921DED1B2700506B0A /* SearchBaseController.m in Sources */,
 				CD0052501DF94B6700E76BF5 /* DetailViewController.m in Sources */,

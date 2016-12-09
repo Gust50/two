@@ -43,3 +43,11 @@
     return @{@"StepList":@"ClassList"};
 }
 @end
+
+@implementation schoolModel
+
+@end
+
+@implementation commentModel
+
+@end

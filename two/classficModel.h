@@ -58,3 +58,17 @@
 @interface StepList : NSObject
 @property(nonatomic,strong)NSMutableArray *StepList;
 @end
+
+@interface schoolModel :NSObject
+@property(nonatomic,strong)NSString *SchoolLogoUrl;
+@property(nonatomic,strong)NSString *CourseSaleNumber;
+@property(nonatomic,strong)NSString *PrelectNum;
+
+@end
+
+@interface commentModel : NSObject
+@property(nonatomic,strong)NSString *Avatar;
+@property(nonatomic,strong)NSString *NickName;
+@property(nonatomic,strong)NSString *VoteText;
+@property(nonatomic,strong)NSString *CreateTime;
+@end

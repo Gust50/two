@@ -11,7 +11,11 @@
 #import "courceThreeCell.h"
 #import "courceFourCell.h"
 #import "MoreViewController.h"
+#import "classficModel.h"
 @interface SchoolViewController ()<UITableViewDelegate,UITableViewDataSource,courceFourCellDelegate>
+{
+    schoolModel *_schoolModel;
+}
 @property(nonatomic,assign)BOOL isSelectedItem;
 @property(nonatomic,strong)UITableView *tableView;
 @end
@@ -33,6 +37,7 @@ static NSString *const fourID = @"fourID";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _schoolModel = [schoolModel new];
     self.navigationController.navigationBar.barTintColor = RGB(59, 192, 167);
     self.view.backgroundColor = RGB(237, 236, 242);
     self.title = @"课程详情";
@@ -41,6 +46,7 @@ static NSString *const fourID = @"fourID";
     [self initUI];
 }
 - (void)initUI{
+    [self loadData];
     [self.view addSubview:self.tableView];
     [self updateViewConstraints];
     [_tableView registerClass:[courceOneCell class] forCellReuseIdentifier:oneID];
@@ -74,6 +80,7 @@ static NSString *const fourID = @"fourID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         courceOneCell *cell = [tableView dequeueReusableCellWithIdentifier:oneID forIndexPath:indexPath];
+        cell.model = _schoolModel;
         return cell;
     }else if(indexPath.section == 1){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:twoID forIndexPath:indexPath];
@@ -117,9 +124,19 @@ static NSString *const fourID = @"fourID";
         return 10;
     }
 }
+- (void)loadData{
+    NSString *url = [NSString stringWithFormat:@"http://pop.client.chuanke.com/?mod=school&act=info&mode=&sid=%@&uid=%@",self.SID,UID];
+    [[NetworkSingleton sharedManager] getDataResult:nil url:url successBlock:^(id responseBody) {
+        _schoolModel = [schoolModel mj_objectWithKeyValues:responseBody];
+        [self.tableView reloadData];
+    } failureBlock:^(NSString *error) {
+        
+    }];
+}
 #pragma mark --- courceDelegate ---
 - (void)moreBtnAC{
     MoreViewController *MoreVC = [MoreViewController new];
+    MoreVC.SID = self.SID;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:MoreVC animated:YES];
     self.hidesBottomBarWhenPushed = NO;
